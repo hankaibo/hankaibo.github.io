@@ -1,0 +1,23 @@
+language: go
+go:
+  - master
+
+install:
+  - go get github.com/gohugoio/hugo
+
+before_script:
+  - rm -rf public
+
+script:
+  - hugo
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  verbose: true
+  keep-history: true
+  local_dir: public
+  target_branch: master
+  on:
+    branch: code
