@@ -3,12 +3,13 @@
 # https://docs.travis-ci.com/user/languages/go/
 # https://docs.travis-ci.com/user/customizing-the-build/
 
+dist: xenial
 language: go
-
 go:
   - master
 
-# before_install
+# before_install:
+
 # install - install any dependencies required
 install:
   - go get github.com/gohugoio/hugo
