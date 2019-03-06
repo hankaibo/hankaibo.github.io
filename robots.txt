@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://hankaibo.github.io/sitemap.xml

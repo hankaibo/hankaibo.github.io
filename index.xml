@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>韩凯波的个人博客</title>
+    <link>https://hankaibo.github.io/</link>
+    <description>Recent content on 韩凯波的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 06 Mar 2019 13:57:46 +0800</lastBuildDate>
+    
+        <atom:link href="https://hankaibo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>前端简史</title>
+      <link>https://hankaibo.github.io/post/2019/2019-03-06/</link>
+      <pubDate>Wed, 06 Mar 2019 13:57:46 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-03-06/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;html&#34;&gt;HTML&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1993.06，HTML诞生&lt;/li&gt;
+&lt;li&gt;1995.11，HTML 2.0&lt;/li&gt;
+&lt;li&gt;1996.01，HTML 3.2&lt;/li&gt;
+&lt;li&gt;1997.11，HTML 4.0&lt;/li&gt;
+&lt;li&gt;2014.10，HTML 5.0&lt;/li&gt;
+&lt;li&gt;2017.10，HTML 5.1&lt;/li&gt;
+&lt;li&gt;2017.12，HTML 5.2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;css&#34;&gt;CSS&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1996.12, CSS 1.0&lt;/li&gt;
+&lt;li&gt;1998.05, CSS 2.0&lt;/li&gt;
+&lt;li&gt;2001.05, CSS 3.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;javascript&#34;&gt;JavaScript&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1995, LiveScript ==&amp;gt; JavaScript&lt;/li&gt;
+&lt;li&gt;1996, JScript&lt;/li&gt;
+&lt;li&gt;1997, ECMAScript&lt;/li&gt;
+&lt;li&gt;1990s, ECMAScript 1.0 &amp;ndash;&amp;gt; 2.0 &amp;ndash;&amp;gt; 3.0&lt;/li&gt;
+&lt;li&gt;2007s, ECMAScript 4.0 &amp;ndash;&amp;gt; 3.1&lt;/li&gt;
+&lt;li&gt;2009s, ECMAScript 5.0 &amp;ndash;&amp;gt; 5.1&lt;/li&gt;
+&lt;li&gt;2015, ECMAScript 6.0 ==&amp;gt; ECMAScript 2015&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;web-1-0时代-静态页面&#34;&gt;Web 1.0时代，静态页面&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1990, WWW诞生&lt;/li&gt;
+&lt;li&gt;1992, Mosaic&lt;/li&gt;
+&lt;li&gt;1994, Navigator 1.0&lt;/li&gt;
+&lt;li&gt;1996, Navigator 2.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;web-2-0时代-动态页面&#34;&gt;Web 2.0时代，动态页面&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ajax&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2004, Google Email&lt;/li&gt;
+&lt;li&gt;2005, Google Map
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;兼容性&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dojo&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;li&gt;MooTools&lt;/li&gt;
+&lt;li&gt;Prototype&lt;/li&gt;
+&lt;li&gt;YUI/Ext
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;模块化&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CommonJS&lt;/li&gt;
+&lt;li&gt;AMD&lt;/li&gt;
+&lt;li&gt;CMD&lt;/li&gt;
+&lt;li&gt;UMD
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;模板&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;aiduTemplate&lt;/li&gt;
+&lt;li&gt;artTemplate&lt;/li&gt;
+&lt;li&gt;juicer&lt;/li&gt;
+&lt;li&gt;&amp;hellip;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;MVVM&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Knockout&lt;/li&gt;
+&lt;li&gt;Backbone&lt;/li&gt;
+&lt;li&gt;Angular&lt;/li&gt;
+&lt;li&gt;React&lt;/li&gt;
+&lt;li&gt;Vue&lt;/li&gt;
+&lt;li&gt;&amp;hellip;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;node-js-诞生-大前端时代&#34;&gt;Node.js 诞生，大前端时代&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;bower&lt;/li&gt;
+&lt;li&gt;npm&lt;/li&gt;
+&lt;li&gt;jspm&lt;/li&gt;
+&lt;li&gt;spm&lt;/li&gt;
+&lt;li&gt;grunt&lt;/li&gt;
+&lt;li&gt;gulp&lt;/li&gt;
+&lt;li&gt;webpack&lt;/li&gt;
+&lt;li&gt;rollup&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>https://hankaibo.github.io/post/hello/</link>
+      <pubDate>Thu, 31 Jan 2019 11:45:23 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/hello/</guid>
+      
+        <description>&lt;p&gt;Hi, hugo!&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://hankaibo.github.io/about/</link>
+      <pubDate>Wed, 30 Jan 2019 16:32:08 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/about/</guid>
+      
+        <description>&lt;p&gt;我是一条狗。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

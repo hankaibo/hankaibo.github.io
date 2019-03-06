@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on 韩凯波的个人博客</title>
+    <link>https://hankaibo.github.io/tags/web/</link>
+    <description>Recent content in Web on 韩凯波的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 06 Mar 2019 13:57:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://hankaibo.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>前端简史</title>
+      <link>https://hankaibo.github.io/post/2019/2019-03-06/</link>
+      <pubDate>Wed, 06 Mar 2019 13:57:46 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-03-06/</guid>
+      <description>HTML 1993.06，HTML诞生 1995.11，HTML 2.0 1996.01，HTML 3.2 1997.11，HTML 4.0 2014.10，HTML 5.0 201</description>
+    </item>
+    
+  </channel>
+</rss>

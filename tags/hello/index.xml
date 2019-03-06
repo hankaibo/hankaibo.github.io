@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hello on 韩凯波的个人博客</title>
+    <link>https://hankaibo.github.io/tags/hello/</link>
+    <description>Recent content in Hello on 韩凯波的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 31 Jan 2019 11:45:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://hankaibo.github.io/tags/hello/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello</title>
+      <link>https://hankaibo.github.io/post/hello/</link>
+      <pubDate>Thu, 31 Jan 2019 11:45:23 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/hello/</guid>
+      <description>Hi, hugo!</description>
+    </item>
+    
+  </channel>
+</rss>
