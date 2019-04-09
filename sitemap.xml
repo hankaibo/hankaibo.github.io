@@ -1,6 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <?xml-stylesheet type="text/xsl" href="https://hankaibo.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://hankaibo.github.io/post/</loc>
+    <lastmod>2019-04-08T16:02:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/post/2019/2019-04-08/</loc>
+    <lastmod>2019-04-08T16:02:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/</loc>
+    <lastmod>2019-04-08T16:02:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/categories/</loc>
+    <lastmod>2019-03-06T13:57:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/tags/</loc>
+    <lastmod>2019-03-06T13:57:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/tags/web/</loc>
+    <lastmod>2019-03-06T13:57:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/categories/web/</loc>
+    <lastmod>2019-03-06T13:57:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
   
   <url>
     <loc>https://hankaibo.github.io/post/2019/2019-03-06/</loc>
@@ -17,65 +59,22 @@
   </url>
   
   <url>
-    <loc>https://hankaibo.github.io/about/</loc>
-    <lastmod>2019-01-30T16:32:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hankaibo.github.io/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://hankaibo.github.io/tags/hello/</loc>
     <lastmod>2019-01-31T11:45:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://hankaibo.github.io/categories/index/</loc>
     <lastmod>2019-01-31T11:45:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://hankaibo.github.io/post/</loc>
-    <lastmod>2019-03-06T13:57:46+08:00</lastmod>
+    <loc>https://hankaibo.github.io/about/</loc>
+    <lastmod>2019-01-30T16:32:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://hankaibo.github.io/tags/</loc>
-    <lastmod>2019-01-31T11:45:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://hankaibo.github.io/tags/web/</loc>
-    <lastmod>2019-03-06T13:57:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://hankaibo.github.io/categories/web/</loc>
-    <lastmod>2019-03-06T13:57:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://hankaibo.github.io/</loc>
-    <lastmod>2019-03-06T13:57:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
