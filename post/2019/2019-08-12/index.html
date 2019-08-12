@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.19ae5a432863a072ec64433bb1020bd6d3401129f87d6f2ad5af3bcfd84168a1.css" integrity="sha256-Ga5aQyhjoHLsZEM7sQIL1tNAESn4fW8q1a87z9hBaKE=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.31c4b7729c8d71cc152f8de4203d90bfd8a04f7eab69372de7234ebf55b7701b.css" integrity="sha256-McS3cpyNccwVL43kID2Qv9igT36raTct5yNOv1W3cBs=" media="screen" crossorigin="anonymous">
 
 
 
@@ -141,6 +141,8 @@
         
       </li>
     
+
+    
   </ul>
 </nav>
 
@@ -202,6 +204,8 @@
     </div>
     </div>
 </div>
+
+  
 
   
 
@@ -275,6 +279,10 @@
 
       </li>
     
+
+    
+    
+
     
   </ul>
 </nav>
@@ -354,8 +362,9 @@
 <ol>
 <li><p>配置服务端：</p>
 
-<p>I. 下载安装包<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a>，选择适合服务器的版本；
-II.</p></li>
+<p>I. 下载安装包<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a>，选择适合服务器的版本；</p>
+
+<p>II.</p></li>
 
 <li><p>配置客户端 frpc：</p>
 
@@ -363,14 +372,14 @@ II.</p></li>
 
 <p>II. 打开frpc.ini，配置如下：</p>
 
-<pre><code>[common]
+<pre><code class="language-sh">[common]
 # 你的服务器ip地址或者域名
 server_addr = 0.0.0.0
 # 服务器端口，默认为7000
 server_port = 7000
 # 类似于密码
 token = 123456
-
+    
 # 远程桌面连接的名字，随意命名
 [rdp] 
 # 远程连接使用的协议
@@ -388,12 +397,12 @@ remote_port = 7001
 
 <p>III. 运行，使用 cmd 或者 PowerShell 进入目录，执行</p>
 
-<pre><code>frpc.exe -c frpc.ini
+<pre><code class="language-shell">frpc.exe -c frpc.ini
 </code></pre>
 
 <p>IV. 开机自启，编写批处理脚本frp.bat：</p>
 
-<pre><code>@echo off
+<pre><code class="language-shell">@echo off
 if &quot;%1&quot; == &quot;h&quot; goto begin
 mshta vbscript:createobject(&quot;wscript.shell&quot;).run(&quot;&quot;&quot;%~nx0&quot;&quot; h&quot;,0)(window.close)&amp;&amp;exit
 :begin
@@ -420,7 +429,10 @@ exit
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-08-12</span>
+    <span class="item-content">
+      2019-08-12
+      
+    </span>
   </p>
   
   <p class="copyright-item">
@@ -485,6 +497,8 @@ exit
   
 
   
+
+  
   
 
   
@@ -492,10 +506,8 @@ exit
   
 
   
-  
+
     
-
-
 
         </div>
       </div>
@@ -596,6 +608,8 @@ exit
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
 
 
 
