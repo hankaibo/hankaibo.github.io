@@ -5,10 +5,110 @@
     <description>Recent content on 韩凯波的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 07 Aug 2019 20:52:35 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 17:16:11 +0800</lastBuildDate>
     
         <atom:link href="https://hankaibo.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TeamViewer替代方案之frp</title>
+      <link>https://hankaibo.github.io/post/2019/2019-08-12/</link>
+      <pubDate>Mon, 12 Aug 2019 17:16:11 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-08-12/</guid>
+      
+        <description>&lt;p&gt;原因&lt;a href=&#34;https://hankaibo.github.io/post/2019/2019-08-07&#34;&gt;前文&lt;/a&gt;已述，不再多言。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://hankaibo.github.io/post/2019&#34;&gt;frp&lt;/a&gt;是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。&lt;/p&gt;
+
+&lt;p&gt;正向代理，比如你想通过Google查点资料，结果被和谐了。这时呢，你下载了一款科学上网软件，装上它之后再连接Google，妥了。&lt;/p&gt;
+
+&lt;p&gt;背后原理是什么呢？&lt;/p&gt;
+
+&lt;p&gt;在这里科学上网充当了一个正向代理的角色，当你访问Google时，它把你浏览器的请求拿过来发到它在国外的服务器上，国外的服务器再向Google请求。
+因为国外没有墙，自然能访问Google了。得到Google的回复后再转给你。对于Google来说，它认为是那个服务器访问的它。
+服务器就是正向代理，正向代理隐藏了真实的客户端（你）。&lt;/p&gt;
+
+&lt;p&gt;反向代理，与此相反。&lt;/p&gt;
+
+&lt;p&gt;当你在北京访问 www.baidu.com 服务器 nginx 时，nginx 指派北京的服务器把你要的内容返还给你，因为北京这台服务器离你近，反应快；
+当你在广州时，nginx 指派广州的服务器把内容返回给你，因为此时它发现广州的服务器离你近，反应快。&lt;/p&gt;
+
+&lt;p&gt;但是对于你来说，这一切都是透明的。你一直认为自己访问的就是 nginx，到底是那台服务器响应你的，你根本不关心。在这里 nginx 就是反向代理，
+反向代理隐藏真实服务端。&lt;/p&gt;
+
+&lt;p&gt;我们安装的 frp 就是一个类似 nginx 的反向代理，你通过远程桌面连接它，它就指派公司电脑响应你。实现了远程办公的功能。&lt;/p&gt;
+
+&lt;p&gt;前提条件：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;一个公网服务器（阿里云、腾讯云、华为云……）；&lt;/li&gt;
+&lt;li&gt;公司电脑一台；&lt;/li&gt;
+&lt;li&gt;家里电脑一台。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;步骤：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;配置服务端：&lt;/p&gt;
+
+&lt;p&gt;I. 下载安装包&lt;a href=&#34;https://github.com/fatedier/frp/releases&#34;&gt;https://github.com/fatedier/frp/releases&lt;/a&gt;，选择适合服务器的版本；
+II.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;配置客户端 frpc：&lt;/p&gt;
+
+&lt;p&gt;I. 下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。&lt;/p&gt;
+
+&lt;p&gt;II. 打开frpc.ini，配置如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[common]
+# 你的服务器ip地址或者域名
+server_addr = 0.0.0.0
+# 服务器端口，默认为7000
+server_port = 7000
+# 类似于密码
+token = 123456
+
+# 远程桌面连接的名字，随意命名
+[rdp] 
+# 远程连接使用的协议
+type = tcp 
+# 本地ip，填你需要转发到的目的ip
+# 如果是转发到frp客户端所在本机（比如路由器）则填 127.0.0.1
+# 否则填对应机器的内网ip
+local_ip = 127.0.0.1
+# 远程桌面连接使用的端口
+local_port = 3389
+# frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问
+# 客户端的 local_port，如果填0则会随机分配一个端口
+remote_port = 7001
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;III. 运行，使用 cmd 或者 PowerShell 进入目录，执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;frpc.exe -c frpc.ini
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;IV. 开机自启，编写批处理脚本frp.bat：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@echo off
+if &amp;quot;%1&amp;quot; == &amp;quot;h&amp;quot; goto begin
+mshta vbscript:createobject(&amp;quot;wscript.shell&amp;quot;).run(&amp;quot;&amp;quot;&amp;quot;%~nx0&amp;quot;&amp;quot; h&amp;quot;,0)(window.close)&amp;amp;&amp;amp;exit
+:begin
+REM
+cd 你的目录
+frpc -c frpc.ini
+exit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;生成bat的快捷方式，并放在启动目录下(&lt;br /&gt;
+所有用户目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+或者当前用户：C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+)，即可开机自启。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Windows 10家庭版启用远程桌面连接</title>
@@ -17,24 +117,24 @@
       
       <guid>https://hankaibo.github.io/post/2019/2019-08-07/</guid>
       
-        <description>&lt;p&gt;一直没怎么用过Windows自带的远程桌面功能，最近经常需要在家远程连接公司电脑办公，但以前使用正常的Teamviewer突然抽风不能用了。&lt;/p&gt;
+        <description>&lt;p&gt;一直没怎么用过Windows自带的远程桌面功能，最近经常需要在家远程连接公司电脑办公，但以前使用正常的TeamViewer突然抽风不能用了。&lt;/p&gt;
 
 &lt;p&gt;即使同事给我使用了破解版本，也很快又出现了问题，可能是我打开的姿势不对吧！&lt;/p&gt;
 
-&lt;p&gt;考虑到国人的尿性，直接决定使用国外软件（感觉自己有点崇洋媚外），查找了一晚上，最后找到两种办法。&lt;/p&gt;
+&lt;p&gt;考虑到国人的尿性，直接决定使用国外软件（感觉自己有点崇洋媚外😗），查找了一晚上，最后找到两种办法。&lt;/p&gt;
 
-&lt;p&gt;一，使用frp搭建反向代理服务器，通过外网借助系统自带的远程桌面功能连接内网电脑，具体请看此文。&lt;/p&gt;
+&lt;p&gt;一，使用frp搭建反向代理服务器，家里电脑使用远程桌面连接外网代理服务器(安装服务端)，代理服务器自动转接到公司内网电脑(安装客户端)，具体请看&lt;a href=&#34;https://hankaibo.github.io/post/2019/2019-08-12/&#34;&gt;此文&lt;/a&gt;。&lt;/p&gt;
 
-&lt;p&gt;二，使用OpenVPN搭建服务器，借助远程桌面功能连接。&lt;/p&gt;
+&lt;p&gt;二，使用OpenVPN搭建服务器，公司和家里电脑安装客户端，组建一个虚拟局域网络，然后使用远程桌面连接。&lt;/p&gt;
 
-&lt;p&gt;以上两种实现方式，都要借助系统自带的功能，兴冲冲去启用该功能时发现自己是家庭版本。泪奔。&lt;/p&gt;
+&lt;p&gt;以上两种实现方式，都要借助系统自带的远程桌面连接功能，兴冲冲去启用该功能时发现自己是家庭版本。泪奔。&lt;/p&gt;
 
 &lt;p&gt;问谷歌，只需借助一个小玩意即可实现。即&lt;a href=&#34;https://github.com/stascorp/rdpwrap&#34;&gt;RDP Wrapper Library&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;使用如下：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载最新版本:&lt;a href=&#34;https://github.com/stascorp/rdpwrap/releases&#34;&gt;https://github.com/stascorp/rdpwrap/releases&lt;/a&gt;；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;下载最新版本：&lt;a href=&#34;https://github.com/stascorp/rdpwrap/releases&#34;&gt;https://github.com/stascorp/rdpwrap/releases&lt;/a&gt;；&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;解压之后安装：运行 install.bat 批处理文件；&lt;/p&gt;&lt;/li&gt;
 
@@ -48,7 +148,7 @@
 &lt;li&gt;&lt;p&gt;运行 RDPCheck.exe，连接电脑测试。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;注： 如果一切正常的情况下依然不能连接可以尝试设置用户名/密码，无密码可能会出问题；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：如果一切正常的情况下依然不能连接可以尝试设置用户名/密码，无密码可能会出问题。&lt;/strong&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -79,7 +179,7 @@
 当我们访问“&lt;a href=&#34;http://localhost:8000/users/toList”时，&#34;&gt;http://localhost:8000/users/toList”时，&lt;/a&gt;
 后台将分解出“/users/toList”路径，并找到相关的Controller处理。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;@Controller
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Controller
 @RequestMapping(value = &amp;quot;/users&amp;quot;)   //所有&amp;quot;/users&amp;quot;开头的url都被这个类处理。
 public class BaseUserController {
     ...

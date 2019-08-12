@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Web · 韩凯波的个人博客</title>
+  <title>TeamViewer替代方案之frp - 韩凯波的个人博客</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="hankaibo" />
-  <meta name="description" content="hankaibo&#39;s blog." />
+  <meta name="description" content="原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资" />
+
   <meta name="keywords" content="hankaibo" />
 
 
@@ -34,8 +35,7 @@
 <meta name="generator" content="Hugo 0.56.3" />
 
 
-<link rel="canonical" href="https://hankaibo.github.io/tags/web/" />
-<link href="https://hankaibo.github.io/tags/web/index.xml" rel="alternate" type="application/rss+xml" title="韩凯波的个人博客" />
+<link rel="canonical" href="https://hankaibo.github.io/post/2019/2019-08-12/" />
 
 
 
@@ -57,18 +57,26 @@
 
 
 
-<meta property="og:title" content="Web" />
-<meta property="og:description" content="hankaibo&#39;s blog." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hankaibo.github.io/tags/web/" />
+<meta property="og:title" content="TeamViewer替代方案之frp" />
+<meta property="og:description" content="原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hankaibo.github.io/post/2019/2019-08-12/" />
+<meta property="article:published_time" content="2019-08-12T17:16:11+08:00" />
+<meta property="article:modified_time" content="2019-08-12T17:16:11+08:00" />
+<meta itemprop="name" content="TeamViewer替代方案之frp">
+<meta itemprop="description" content="原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资">
 
-<meta property="og:updated_time" content="2019-04-08T16:02:31+08:00" />
-<meta itemprop="name" content="Web">
-<meta itemprop="description" content="hankaibo&#39;s blog.">
 
+<meta itemprop="datePublished" content="2019-08-12T17:16:11&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-12T17:16:11&#43;08:00" />
+<meta itemprop="wordCount" content="1141">
+
+
+
+<meta itemprop="keywords" content="TeamViewer,frp," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Web"/>
-<meta name="twitter:description" content="hankaibo&#39;s blog."/>
+<meta name="twitter:title" content="TeamViewer替代方案之frp"/>
+<meta name="twitter:description" content="原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -277,56 +285,198 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-
-<section id="archive" class="archive">
-  
+          <article class="post bg-white">
     
-      <div class="archive-title tag">
-        <h2 class="archive-name">标签： Web</h2>
+    <header class="post-header">
+      <h1 class="post-title">TeamViewer替代方案之frp</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-08-12" class="post-time">
+          2019-08-12
+        </time>
+        <div class="post-category">
+            <a href="https://hankaibo.github.io/categories/%E7%BD%91%E7%BB%9C/"> 网络 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
       </div>
+    </header>
+
     
-  
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
 
-  
-    <div class="archive-post">
-      <time datetime="2019-04-08" class="archive-post-time">
-        2019-04-08
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/2019-04-08/" class="archive-post-link">
-          前端路由
-        </a>
-      </span>
+    
+    <div class="post-content">
+      <p>原因<a href="https://hankaibo.github.io/post/2019/2019-08-07">前文</a>已述，不再多言。</p>
+
+<p><a href="https://hankaibo.github.io/post/2019">frp</a>是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。</p>
+
+<p>正向代理，比如你想通过Google查点资料，结果被和谐了。这时呢，你下载了一款科学上网软件，装上它之后再连接Google，妥了。</p>
+
+<p>背后原理是什么呢？</p>
+
+<p>在这里科学上网充当了一个正向代理的角色，当你访问Google时，它把你浏览器的请求拿过来发到它在国外的服务器上，国外的服务器再向Google请求。
+因为国外没有墙，自然能访问Google了。得到Google的回复后再转给你。对于Google来说，它认为是那个服务器访问的它。
+服务器就是正向代理，正向代理隐藏了真实的客户端（你）。</p>
+
+<p>反向代理，与此相反。</p>
+
+<p>当你在北京访问 www.baidu.com 服务器 nginx 时，nginx 指派北京的服务器把你要的内容返还给你，因为北京这台服务器离你近，反应快；
+当你在广州时，nginx 指派广州的服务器把内容返回给你，因为此时它发现广州的服务器离你近，反应快。</p>
+
+<p>但是对于你来说，这一切都是透明的。你一直认为自己访问的就是 nginx，到底是那台服务器响应你的，你根本不关心。在这里 nginx 就是反向代理，
+反向代理隐藏真实服务端。</p>
+
+<p>我们安装的 frp 就是一个类似 nginx 的反向代理，你通过远程桌面连接它，它就指派公司电脑响应你。实现了远程办公的功能。</p>
+
+<p>前提条件：</p>
+
+<ol>
+<li>一个公网服务器（阿里云、腾讯云、华为云……）；</li>
+<li>公司电脑一台；</li>
+<li>家里电脑一台。</li>
+</ol>
+
+<p>步骤：</p>
+
+<ol>
+<li><p>配置服务端：</p>
+
+<p>I. 下载安装包<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a>，选择适合服务器的版本；
+II.</p></li>
+
+<li><p>配置客户端 frpc：</p>
+
+<p>I. 下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。</p>
+
+<p>II. 打开frpc.ini，配置如下：</p>
+
+<pre><code>[common]
+# 你的服务器ip地址或者域名
+server_addr = 0.0.0.0
+# 服务器端口，默认为7000
+server_port = 7000
+# 类似于密码
+token = 123456
+
+# 远程桌面连接的名字，随意命名
+[rdp] 
+# 远程连接使用的协议
+type = tcp 
+# 本地ip，填你需要转发到的目的ip
+# 如果是转发到frp客户端所在本机（比如路由器）则填 127.0.0.1
+# 否则填对应机器的内网ip
+local_ip = 127.0.0.1
+# 远程桌面连接使用的端口
+local_port = 3389
+# frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问
+# 客户端的 local_port，如果填0则会随机分配一个端口
+remote_port = 7001
+</code></pre>
+
+<p>III. 运行，使用 cmd 或者 PowerShell 进入目录，执行</p>
+
+<pre><code>frpc.exe -c frpc.ini
+</code></pre>
+
+<p>IV. 开机自启，编写批处理脚本frp.bat：</p>
+
+<pre><code>@echo off
+if &quot;%1&quot; == &quot;h&quot; goto begin
+mshta vbscript:createobject(&quot;wscript.shell&quot;).run(&quot;&quot;&quot;%~nx0&quot;&quot; h&quot;,0)(window.close)&amp;&amp;exit
+:begin
+REM
+cd 你的目录
+frpc -c frpc.ini
+exit
+</code></pre>
+
+<p>生成bat的快捷方式，并放在启动目录下(<br />
+所有用户目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+或者当前用户：C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+)，即可开机自启。</p></li>
+</ol>
+
     </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">hankaibo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-08-12</span>
+  </p>
   
-    <div class="archive-post">
-      <time datetime="2019-03-06" class="archive-post-time">
-        2019-03-06
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/2019-03-06/" class="archive-post-link">
-          前端简史
-        </a>
-      </span>
-    </div>
-  
-</section>
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
 
 
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/wechat-qr-code.png">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/alipay-qr-code.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
 
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://hankaibo.github.io/tags/teamviewer/">TeamViewer</a>
+          <a href="https://hankaibo.github.io/tags/frp/">frp</a>
+          
+        </div>
 
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2019/2019-08-07/">
+            <span class="next-text nav-default">Windows 10家庭版启用远程桌面连接</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
 
-
-  
-  
-  
-
-  
-  
-
-  
-  
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
@@ -334,7 +484,16 @@
   
   
 
+  
+  
 
+  
+
+  
+
+  
+  
+    
 
 
 

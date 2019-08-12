@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>frp on 韩凯波的个人博客</title>
+    <link>https://hankaibo.github.io/tags/frp/</link>
+    <description>Recent content in frp on 韩凯波的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 12 Aug 2019 17:16:11 +0800</lastBuildDate>
+    
+	<atom:link href="https://hankaibo.github.io/tags/frp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TeamViewer替代方案之frp</title>
+      <link>https://hankaibo.github.io/post/2019/2019-08-12/</link>
+      <pubDate>Mon, 12 Aug 2019 17:16:11 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-08-12/</guid>
+      <description>原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资</description>
+    </item>
+    
+  </channel>
+</rss>

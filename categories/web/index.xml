@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>web on 韩凯波的个人博客</title>
+    <title>Web on 韩凯波的个人博客</title>
     <link>https://hankaibo.github.io/categories/web/</link>
-    <description>Recent content in web on 韩凯波的个人博客</description>
+    <description>Recent content in Web on 韩凯波的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 06 Mar 2019 13:57:46 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Apr 2019 16:02:31 +0800</lastBuildDate>
     
 	<atom:link href="https://hankaibo.github.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>前端路由</title>
+      <link>https://hankaibo.github.io/post/2019/2019-04-08/</link>
+      <pubDate>Mon, 08 Apr 2019 16:02:31 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-04-08/</guid>
+      <description>背景 说起前端路由，就不得再问一句有后台路由吗？ 其实一开始是没有前端路由这个概念的，路由全部由后台服务器实现与控制。 当我们在浏览器地址栏中输入</description>
+    </item>
     
     <item>
       <title>前端简史</title>
