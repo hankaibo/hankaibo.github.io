@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 韩凯波的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 12 Aug 2019 17:16:11 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Oct 2019 19:29:32 +0800</lastBuildDate>
     
 	<atom:link href="https://hankaibo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenVPN</title>
+      <link>https://hankaibo.github.io/tags/openvpn/</link>
+      <pubDate>Tue, 08 Oct 2019 19:29:32 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/tags/openvpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TeamViewer</title>
+      <link>https://hankaibo.github.io/tags/teamviewer/</link>
+      <pubDate>Tue, 08 Oct 2019 19:29:32 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/tags/teamviewer/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>frp</title>
@@ -21,11 +39,11 @@
     </item>
     
     <item>
-      <title>TeamViewer</title>
-      <link>https://hankaibo.github.io/tags/teamviewer/</link>
-      <pubDate>Mon, 12 Aug 2019 17:16:11 +0800</pubDate>
+      <title>RDP</title>
+      <link>https://hankaibo.github.io/tags/rdp/</link>
+      <pubDate>Wed, 07 Aug 2019 20:52:35 +0800</pubDate>
       
-      <guid>https://hankaibo.github.io/tags/teamviewer/</guid>
+      <guid>https://hankaibo.github.io/tags/rdp/</guid>
       <description></description>
     </item>
     

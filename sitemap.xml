@@ -3,34 +3,62 @@
   
   <url>
     <loc>https://hankaibo.github.io/categories/</loc>
-    <lastmod>2019-08-12T17:16:11+08:00</lastmod>
+    <lastmod>2019-10-08T19:29:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://hankaibo.github.io/tags/frp/</loc>
-    <lastmod>2019-08-12T17:16:11+08:00</lastmod>
+    <loc>https://hankaibo.github.io/tags/openvpn/</loc>
+    <lastmod>2019-10-08T19:29:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hankaibo.github.io/post/</loc>
-    <lastmod>2019-08-12T17:16:11+08:00</lastmod>
+    <lastmod>2019-10-08T19:29:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hankaibo.github.io/tags/</loc>
-    <lastmod>2019-08-12T17:16:11+08:00</lastmod>
+    <lastmod>2019-10-08T19:29:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hankaibo.github.io/tags/teamviewer/</loc>
+    <lastmod>2019-10-08T19:29:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/post/2019/2019-10-08/</loc>
+    <lastmod>2019-10-08T19:29:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/categories/%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2019-10-08T19:29:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/</loc>
+    <lastmod>2019-10-08T19:29:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hankaibo.github.io/tags/frp/</loc>
     <lastmod>2019-08-12T17:16:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -44,15 +72,8 @@
   </url>
   
   <url>
-    <loc>https://hankaibo.github.io/categories/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2019-08-12T17:16:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hankaibo.github.io/</loc>
-    <lastmod>2019-08-12T17:16:11+08:00</lastmod>
+    <loc>https://hankaibo.github.io/tags/rdp/</loc>
+    <lastmod>2019-08-07T20:52:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

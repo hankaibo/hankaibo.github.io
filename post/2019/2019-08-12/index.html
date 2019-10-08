@@ -23,9 +23,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="hankaibo" />
-  <meta name="description" content="原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资" />
+  <meta name="description" content="原因前文已述，不再多言。 frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资料，" />
+<meta name="keywords" content="frp" />
 
-  <meta name="keywords" content="hankaibo" />
 
 
 
@@ -58,25 +58,25 @@
 
 
 <meta property="og:title" content="TeamViewer替代方案之frp" />
-<meta property="og:description" content="原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资" />
+<meta property="og:description" content="原因前文已述，不再多言。 frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资料，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hankaibo.github.io/post/2019/2019-08-12/" />
 <meta property="article:published_time" content="2019-08-12T17:16:11+08:00" />
 <meta property="article:modified_time" content="2019-08-12T17:16:11+08:00" />
 <meta itemprop="name" content="TeamViewer替代方案之frp">
-<meta itemprop="description" content="原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资">
+<meta itemprop="description" content="原因前文已述，不再多言。 frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资料，">
 
 
 <meta itemprop="datePublished" content="2019-08-12T17:16:11&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-12T17:16:11&#43;08:00" />
-<meta itemprop="wordCount" content="1507">
+<meta itemprop="wordCount" content="1491">
 
 
 
 <meta itemprop="keywords" content="TeamViewer,frp," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TeamViewer替代方案之frp"/>
-<meta name="twitter:description" content="原因前文已述，不再多言。 frp是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资"/>
+<meta name="twitter:description" content="原因前文已述，不再多言。 frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资料，"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -321,15 +321,28 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#配置服务端-frps">配置服务端 frps：</a></li>
+<li><a href="#配置客户端-frpc">配置客户端 frpc：</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>原因<a href="https://hankaibo.github.io/post/2019/2019-08-07">前文</a>已述，不再多言。</p>
+      
 
-<p><a href="https://hankaibo.github.io/post/2019">frp</a>是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。</p>
+<p>原因<a href="https://hankaibo.github.io/post/2019/2019-08-07">前文</a>已述，不再多言。</p>
+
+<p>frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。</p>
 
 <p>正向代理，比如你想通过Google查点资料，结果被和谐了。这时呢，你下载了一款科学上网软件，装上它之后再连接Google，妥了。</p>
 
@@ -357,98 +370,103 @@
 <li>家里电脑一台。</li>
 </ol>
 
-<p>步骤：</p>
+<h3 id="配置服务端-frps">配置服务端 frps：</h3>
 
 <ol>
-<li><p>配置服务端 frps：
-I. 下载</p>
+<li><p>下载</p>
 
-<p>安装包地址<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a>，选择适合服务器的版本；</p>
+<p>安装包地址<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a>，选择适合服务器的版本；</p></li>
 
-<p>II. 解压</p>
+<li><p>解压</p>
 
-<p>解压之后可以看到一些frps为前缀的文件，这些是服务端(servlet)使用的；frpc前缀的文件是客户端(client)使用的。</p>
+<p>解压之后可以看到一些frps为前缀的文件，这些是服务端(server)使用的；frpc前缀的文件是客户端(client)使用的。</p>
 
 <p>frps_full.ini是示例文件，供我们参考。我们主要编辑frps.ini文件。</p>
 
-<pre><code class="language-shell"> # 配置开始设置
-  [common]
-  # frp 服务端端口（必须）
-  bind_port = 7000
-  # frp 服务端token（必须）
-  token = 12345678
-
-  # 仪表盘端口、用户名、密码（方便后台查看连接情况）
-  dashboard_port = 7500
-  dashboard_user = admin
-  dabshboard_pwd = admin
-</code></pre>
-
-<p>III. 启动</p>
-
-<pre><code class="language-shell">  frps -c frps.ini
-</code></pre>
-
-<p>这时就可以访问仪表盘查看连接情况等信息。例如 <a href="http://xxx.xxx.xxx.xxx:7500">http://xxx.xxx.xxx.xxx:7500</a> ，输入用户名/密码（admin/admin）就 OK 了。
-为了保证关闭终端后它依然工作需要使用nohup命令，例如：</p>
-
-<pre><code class="language-shell">  nohup frps -c frps.ini
+<pre><code class="language-shell"># 配置开始设置
+[common]
+# frp 服务端端口（必须）
+bind_port = 7000
+# frp 服务端token（必须）
+token = 12345678
+    
+# 仪表盘端口、用户名、密码（方便后台查看连接情况）
+dashboard_port = 7500
+dashboard_user = admin
+dabshboard_pwd = admin
 </code></pre></li>
 
-<li><p>配置客户端 frpc：</p>
+<li><p>启动</p>
 
-<p>I. 下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。</p>
-
-<p>II. 打开frpc.ini，配置如下：</p>
-
-<pre><code class="language-shell"> # 配置开始
-  [common]
-  # 你的服务器ip地址或者域名（就是上面配置服务端所在机器的地址）
-  server_addr = 0.0.0.0
-  # 服务器端口，默认为7000（与上面服务端配置保持相同）
-  server_port = 7000
-  # 类似于密码（与上面服务端配置保持相同）
-  token = 12345678
-
-  # 远程桌面连接的名字，随意命名
-  [rdp] 
-  # 远程连接使用的协议
-  type = tcp 
-  # 本地ip，填你需要转发到的目的ip
-  # 如果是转发到frp客户端所在本机则填 127.0.0.1
-  # 否则填对应机器的内网ip
-  local_ip = 127.0.0.1
-  # 远程桌面连接使用的端口
-  local_port = 3389
-  # frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问
-  # 客户端的 local_port，如果填0则会随机分配一个端口
-  remote_port = 7001
+<pre><code class="language-shell">frps -c frps.ini
 </code></pre>
 
-<p>III. 运行，使用 cmd 或者 PowerShell 进入目录，执行</p>
+<p>这时就可以访问仪表盘查看连接情况等信息。例如 <a href="http://xxx.xxx.xxx.xxx:7500">http://xxx.xxx.xxx.xxx:7500</a> ，输入用户名/密码（admin/admin）就 OK 了。</p>
 
-<pre><code class="language-shell">  frpc.exe -c frpc.ini
-</code></pre>
+<p>为了保证关闭终端后它依然工作需要使用nohup命令，例如：</p>
 
-<p>这样当在家用使用 mstsc 访问 xxx.xxx.xxx.xxx:7001 时，服务器就会指定这个客户端响应，也就是我们远程连接到公司电脑上了。</p>
-
-<p>IV. 开机自启，编写批处理脚本frp.bat：</p>
-
-<pre><code class="language-shell"> @echo off
-  if &quot;%1&quot; == &quot;h&quot; goto begin
-  mshta vbscript:createobject(&quot;wscript.shell&quot;).run(&quot;&quot;&quot;%~nx0&quot;&quot; h&quot;,0)(window.close)&amp;&amp;exit
-  :begin
-  REM
-  cd 你的目录
-  frpc -c frpc.ini
-  exit
-</code></pre>
-
-<p>生成bat的快捷方式，并放在启动目录下(<br />
-所有用户目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
-或者当前用户：C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-)，即可开机自启。</p></li>
+<pre><code class="language-shell">nohup frps -c frps.ini
+</code></pre></li>
 </ol>
+
+<h3 id="配置客户端-frpc">配置客户端 frpc：</h3>
+
+<ol>
+<li><p>下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。</p></li>
+
+<li><p>打开frpc.ini，配置如下：</p>
+
+<pre><code class="language-shell"># 配置开始
+[common]
+# 你的服务器ip地址或者域名（就是上面配置服务端所在机器的地址）
+server_addr = 0.0.0.0
+# 服务器端口，默认为7000（与上面服务端配置保持相同）
+server_port = 7000
+# 类似于密码（与上面服务端配置保持相同）
+token = 12345678
+
+# 远程桌面连接的名字，随意命名
+[rdp] 
+# 远程连接使用的协议
+type = tcp 
+# 本地ip，填你需要转发到的目的ip
+# 如果是转发到frp客户端所在本机则填 127.0.0.1
+# 否则填对应机器的内网ip
+local_ip = 127.0.0.1
+# 远程桌面连接使用的端口
+local_port = 3389
+# frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问
+# 客户端的 local_port，如果填0则会随机分配一个端口
+remote_port = 7001
+</code></pre></li>
+
+<li><p>运行，使用 cmd 或者 PowerShell 进入目录，执行</p>
+
+<pre><code class="language-shell">frpc.exe -c frpc.ini
+</code></pre>
+
+<p>这样当在家用使用 mstsc 访问 xxx.xxx.xxx.xxx:7001 时，服务器就会指定这个客户端响应，也就是我们远程连接到公司电脑上了。</p></li>
+
+<li><p>开机自启，编写批处理脚本frp.bat：</p>
+
+<pre><code class="language-shell">@echo off
+if &quot;%1&quot; == &quot;h&quot; goto begin
+mshta vbscript:createobject(&quot;wscript.shell&quot;).run(&quot;&quot;&quot;%~nx0&quot;&quot; h&quot;,0)(window.close)&amp;&amp;exit
+:begin
+REM
+cd 你的目录
+frpc -c frpc.ini
+exit
+</code></pre></li>
+</ol>
+
+<p>生成bat的快捷方式，并放在启动目录下</p>
+
+<p>所有用户目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</p>
+
+<p>或者当前用户：C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</p>
+
+<p>即可开机自启。</p>
 
     </div>
 
@@ -504,6 +522,19 @@ I. 下载</p>
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/2019/2019-10-08/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">TeamViewer替代方案之OpenVPN</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/2019/2019-08-07/">
             <span class="next-text nav-default">Windows 10家庭版启用远程桌面连接</span>
