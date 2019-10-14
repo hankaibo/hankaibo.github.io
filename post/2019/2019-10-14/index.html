@@ -71,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2019-10-14T14:20:53&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-14T14:20:53&#43;08:00" />
-<meta itemprop="wordCount" content="695">
+<meta itemprop="wordCount" content="698">
 
 
 
@@ -308,7 +308,8 @@
             <a href="https://hankaibo.github.io/categories/java/"> Java </a>
             
           </div>
-        
+        <span class="more-meta"> 约 698 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
         
@@ -327,15 +328,9 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li>
-<ul>
 <li><a href="#下载阿里云-maven-的证书">下载阿里云 maven 的证书</a></li>
 <li><a href="#导入阿里云的证书">导入阿里云的证书</a></li>
 <li><a href="#参考">参考</a></li>
-</ul></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -351,10 +346,14 @@
 <p>上周才发现阿里更新了镜像的配置地址，兴冲冲地照原样抄袭了下来。</p>
 
 <p>更新完之后才发现无法编译打包了，pom.xml 文件也提示有错误。报错信息类似这样：</p>
-
-<pre><code class="language-shell">[WARNING] Could not transfer metadata xxxxxxx from/to https://maven.aliyun.com/repository/public: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script">[WARNING] Could not transfer metadata xxxxxxx from/to https://maven.aliyun.com/repository/public: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</code></pre></td></tr></table>
+</div>
+</div>
 <p>面向 google 编程之后，才知道因为阿里云的 maven 仓库升级为 https 协议了，我们IDEA使用 maven 编译打包时，调用本机的 JDK ，JDK 发现阿里云 maven 地址的 https 证书不在它的证书库里。然后就报错了。</p>
 
 <p>解决办法当然是把证书导入到 JDK 的证书库里去。</p>
@@ -362,26 +361,34 @@
 <p>步骤如下：</p>
 
 <ol>
-<li><h4 id="下载阿里云-maven-的证书">下载阿里云 maven 的证书</h4>
+<li><h2 id="下载阿里云-maven-的证书">下载阿里云 maven 的证书</h2>
 
 <p>下载证书很容易，我们只要用浏览器访问阿里云 maven 仓库的网址，就会发现地址栏最前面有一个绿色小锁子，打开小锁子，在里面就能找到证书，将其导出就可以啦。</p>
 
 <p>推荐使用 firefox,chrome 浏览器，比 ie 查找证书方便多了。</p></li>
 
-<li><h4 id="导入阿里云的证书">导入阿里云的证书</h4>
+<li><h2 id="导入阿里云的证书">导入阿里云的证书</h2>
 
 <p>如何导入呢？</p>
 
 <p>JDK 的证书库是一个文件，目录可能如下：</p>
-
-<pre><code class="language-shell">C:\Program Files\AdoptOpenJDK\jdk-11.0.4.11-hotspot\lib\security
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script">C:\Program Files\AdoptOpenJDK\jdk-11.0.4.11-hotspot\lib\security</code></pre></td></tr></table>
+</div>
+</div>
 <p>我使用的是AdoptOpenJDK，Oracle 的也一样。这个目录下的 cacerts 就是 JDK 的证书库。我们把下载的阿里云证书导入它里面就可以了。</p>
-
-<pre><code class="language-shell">keytool -import -alias 证书别名 -keystore 证书库 -file 阿里云证书 -trustcacerts -storepass changeit
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script">keytool -import -alias 证书别名 -keystore 证书库 -file 阿里云证书 -trustcacerts -storepass changeit</code></pre></td></tr></table>
+</div>
+</div>
 <p>证书别名，名称随意，最好能让人一眼明白这个证书的来源等，例如可以叫 aliyun.maven.cer；</p>
 
 <p>证书库，这个就是我们 JDK 的cacerts了；</p>
@@ -396,7 +403,7 @@
 
 <p>这种导入方式虽然简单，但缺点也同样明显。如果我们升级 JDK 版本之后，必须再来一遍；而且仅仅为了 maven 编译就导入一个证书有风险隐患，更科学合理的方式就是使用 maven 的自定义证书库，这个我下次学会了再分享。😅</p>
 
-<h4 id="参考">参考</h4>
+<h2 id="参考">参考</h2>
 
 <ul>
 <li><a href="https://www.playpi.org/2018082501.html">https://www.playpi.org/2018082501.html</a></li>

@@ -71,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2019-08-12T17:16:11&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-12T17:16:11&#43;08:00" />
-<meta itemprop="wordCount" content="1491">
+<meta itemprop="wordCount" content="1535">
 
 
 
@@ -308,7 +308,8 @@
             <a href="https://hankaibo.github.io/categories/%E7%BD%91%E7%BB%9C/"> 网络 </a>
             
           </div>
-        
+        <span class="more-meta"> 约 1535 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
 
         
         
@@ -327,11 +328,8 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
 <li><a href="#配置服务端-frps">配置服务端 frps：</a></li>
 <li><a href="#配置客户端-frpc">配置客户端 frpc：</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -372,7 +370,7 @@
 <li>家里电脑一台。</li>
 </ol>
 
-<h3 id="配置服务端-frps">配置服务端 frps：</h3>
+<h2 id="配置服务端-frps">配置服务端 frps：</h2>
 
 <ol>
 <li><p>下载</p>
@@ -384,8 +382,22 @@
 <p>解压之后可以看到一些frps为前缀的文件，这些是服务端(server)使用的；frpc前缀的文件是客户端(client)使用的。</p>
 
 <p>frps_full.ini是示例文件，供我们参考。我们主要编辑frps.ini文件。</p>
-
-<pre><code class="language-shell"># 配置开始设置
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"># 配置开始设置
 [common]
 # frp 服务端端口（必须）
 bind_port = 7000
@@ -395,30 +407,65 @@ token = 12345678
 # 仪表盘端口、用户名、密码（方便后台查看连接情况）
 dashboard_port = 7500
 dashboard_user = admin
-dabshboard_pwd = admin
-</code></pre></li>
+dabshboard_pwd = admin</code></pre></td></tr></table>
+</div>
+</div></li>
 
 <li><p>启动</p>
-
-<pre><code class="language-shell">frps -c frps.ini
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script">frps -c frps.ini</code></pre></td></tr></table>
+</div>
+</div>
 <p>这时就可以访问仪表盘查看连接情况等信息。例如 <a href="http://xxx.xxx.xxx.xxx:7500">http://xxx.xxx.xxx.xxx:7500</a> ，输入用户名/密码（admin/admin）就 OK 了。</p>
 
 <p>为了保证关闭终端后它依然工作需要使用nohup命令，例如：</p>
-
-<pre><code class="language-shell">nohup frps -c frps.ini
-</code></pre></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script">nohup frps -c frps.ini</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 
-<h3 id="配置客户端-frpc">配置客户端 frpc：</h3>
+<h2 id="配置客户端-frpc">配置客户端 frpc：</h2>
 
 <ol>
 <li><p>下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。</p></li>
 
 <li><p>打开frpc.ini，配置如下：</p>
-
-<pre><code class="language-shell"># 配置开始
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"># 配置开始
 [common]
 # 你的服务器ip地址或者域名（就是上面配置服务端所在机器的地址）
 server_addr = 0.0.0.0
@@ -439,27 +486,44 @@ local_ip = 127.0.0.1
 local_port = 3389
 # frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问
 # 客户端的 local_port，如果填0则会随机分配一个端口
-remote_port = 7001
-</code></pre></li>
+remote_port = 7001</code></pre></td></tr></table>
+</div>
+</div></li>
 
 <li><p>运行，使用 cmd 或者 PowerShell 进入目录，执行</p>
-
-<pre><code class="language-shell">frpc.exe -c frpc.ini
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script">frpc.exe -c frpc.ini</code></pre></td></tr></table>
+</div>
+</div>
 <p>这样当在家用使用 mstsc 访问 xxx.xxx.xxx.xxx:7001 时，服务器就会指定这个客户端响应，也就是我们远程连接到公司电脑上了。</p></li>
 
 <li><p>开机自启，编写批处理脚本frp.bat：</p>
-
-<pre><code class="language-shell">@echo off
-if &quot;%1&quot; == &quot;h&quot; goto begin
-mshta vbscript:createobject(&quot;wscript.shell&quot;).run(&quot;&quot;&quot;%~nx0&quot;&quot; h&quot;,0)(window.close)&amp;&amp;exit
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell script" data-lang="shell script">@echo off
+if &#34;%1&#34; == &#34;h&#34; goto begin
+mshta vbscript:createobject(&#34;wscript.shell&#34;).run(&#34;&#34;&#34;%~nx0&#34;&#34; h&#34;,0)(window.close)&amp;&amp;exit
 :begin
 REM
 cd 你的目录
 frpc -c frpc.ini
-exit
-</code></pre></li>
+exit</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 
 <p>生成bat的快捷方式，并放在启动目录下</p>
