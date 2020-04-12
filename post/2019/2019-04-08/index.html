@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.69.0" />
 
 
 <link rel="canonical" href="https://hankaibo.github.io/post/2019/2019-04-08/" />
@@ -67,16 +67,13 @@
 <meta property="article:modified_time" content="2019-04-08T16:02:31+08:00" />
 <meta itemprop="name" content="前端路由">
 <meta itemprop="description" content="背景 说起前端路由，就不得再问一句有后台路由吗？ 其实一开始是没有前端路由这个概念的，路由全部由后台服务器实现与控制。 当我们在浏览器地址栏中输入">
-
-
 <meta itemprop="datePublished" content="2019-04-08T16:02:31&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-08T16:02:31&#43;08:00" />
 <meta itemprop="wordCount" content="2257">
 
 
 
-<meta itemprop="keywords" content="Web," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Web," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="前端路由"/>
 <meta name="twitter:description" content="背景 说起前端路由，就不得再问一句有后台路由吗？ 其实一开始是没有前端路由这个概念的，路由全部由后台服务器实现与控制。 当我们在浏览器地址栏中输入"/>
 
@@ -325,51 +322,45 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#背景">背景</a></li>
-<li><a href="#实现">实现</a>
-<ul>
-<li><a href="#hash方式">hash方式</a></li>
-<li><a href="#history方式">history方式</a></li>
-</ul></li>
-<li><a href="#404问题">404问题</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#实现">实现</a>
+      <ul>
+        <li><a href="#hash方式">hash方式</a></li>
+        <li><a href="#history方式">history方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#404问题">404问题</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="背景">背景</h2>
-
+      <h2 id="背景">背景</h2>
 <p>说起前端路由，就不得再问一句有后台路由吗？
 其实一开始是没有前端路由这个概念的，路由全部由后台服务器实现与控制。
 当我们在浏览器地址栏中输入一个URL时，浏览器将其发送到后台服务器，服务器解析出地址并根据相关配置拼接成html返回给浏览器渲染。</p>
-
 <p>我们以常用的Spring MVC为例，后台服务器配置片段如下:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&#34;org.springframework.web.servlet.view.InternalResourceViewResolver&#34;</span>
     <span class="na">p:viewClass=</span><span class="s">&#34;org.springframework.web.servlet.view.JstlView&#34;</span>
-    <span class="na">p:prefix=</span><span class="s">&#34;/WEB-INF/jsp/&#34;</span> <span class="na">p:suffix=</span><span class="s">&#34;.jsp&#34;</span><span class="nt">/&gt;</span></code></pre></td></tr></table>
+    <span class="na">p:prefix=</span><span class="s">&#34;/WEB-INF/jsp/&#34;</span> <span class="na">p:suffix=</span><span class="s">&#34;.jsp&#34;</span><span class="nt">/&gt;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>上面我们配置了页面前缀prefix为“/WEB-INF/jsp/”，后缀suffix为“.jsp”。
-当我们访问“<a href="http://localhost:8000/users/toList”时，">http://localhost:8000/users/toList”时，</a>
+</div><p>上面我们配置了页面前缀prefix为“/WEB-INF/jsp/”，后缀suffix为“.jsp”。
+当我们访问“http://localhost:8000/users/toList”时，
 后台将分解出“/users/toList”路径，并找到相关的Controller处理。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -383,99 +374,75 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Controller</span>
-<span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/users&#34;</span><span class="p">)</span>   <span class="c1">//所有&#34;/users&#34;开头的url都被这个类处理。
-</span><span class="c1"></span><span class="kd">public</span> <span class="nf">class</span> <span class="n">BaseUserController</span> <span class="p">{</span>
-    <span class="p">...</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/users&#34;</span><span class="o">)</span>   <span class="c1">//所有&#34;/users&#34;开头的url都被这个类处理。
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BaseUserController</span> <span class="o">{</span>
+    <span class="o">...</span>
     <span class="c1">// &#34;/users/toList&#34;被这个方法处理。
-</span><span class="c1"></span>    <span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/toList&#34;</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="p">.</span><span class="na">GET</span><span class="p">)</span>  
-    <span class="kd">public</span> <span class="nf">String</span> <span class="n">toList</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">&#34;user/list&#34;</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="p">...</span>
-<span class="p">}</span></code></pre></td></tr></table>
+</span><span class="c1"></span>    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;/toList&#34;</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>  
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toList</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">&#34;user/list&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>此方法返回字符串“user/list”，再加上我们的前后缀prefix与suffix，即可得到“/WEB-INF/jsp/user/list.jsp”为我们返回给前端的页面。</p>
-
+</div><p>此方法返回字符串“user/list”，再加上我们的前后缀prefix与suffix，即可得到“/WEB-INF/jsp/user/list.jsp”为我们返回给前端的页面。</p>
 <p>页面目录结构如下：</p>
-
-<p><img src="/img/user_list.jpg" alt="用户列表" title="用户列表" /></p>
-
+<p><img src="/img/user_list.jpg" alt="用户列表" title="用户列表"></p>
 <p>按照返回的“/WEB-INF/jsp/user/list.jsp”，从上图中依次找到相应的页面给前端就完成了后台路由的处理。</p>
-
 <p>通过上面的示例，我们了解了后台路由的处理流程。</p>
-
 <p>为什么会出现前端路由呢？</p>
-
 <p>从上面的流程中，我们不难发现，不同的url对应着不同的页面，当我们切换url时，浏览器会切换对应的页面，它是整体替换的。页面会出现闪烁刷新，导致用户体验不够好。
 Google将Ajax发扬光大后，异步的局部刷新流行开来，但Ajax的无浏览历史记录导致浏览器的前进后退处理比较麻烦，这种情况下，用前端路由就可以很好的解决。
 再加上单页面应用与MVVM的发展，前端路由逐渐成熟与流行起来。</p>
-
 <h2 id="实现">实现</h2>
-
 <p>要实现前端路由，就要解决两个问题：</p>
-
 <ol>
 <li>在页面不刷新的前提下实现url变化</li>
 <li>捕捉到url的变化，以便执行页面替换逻辑</li>
 </ol>
-
 <p>这两个问题都可以通过如下技术解决。一种是基于URL的frag(片段)技术，以“#”为标示，一种是基于HTML 5的History API。即：</p>
-
 <ul>
 <li>location.hash+hashchange事件</li>
 <li>history.pushState()+popState事件</li>
 </ul>
-
 <h3 id="hash方式">hash方式</h3>
-
 <p>根据URL协议我们知道，服务器通常只处理整个对象，而不处理片段，浏览器不能将片段传送给服务器。浏览器从服务器获取整个资源之后，会根据片段来显示指定的资源。</p>
-
 <ol>
-<li>当我们访问“<a href="http://localhost:8000/”时，我们首先打开了默认的index.html页面；">http://localhost:8000/”时，我们首先打开了默认的index.html页面；</a>
-然后我们被重定向到一个新地址，比如：“<a href="http://localhost:8000/#/index”；">http://localhost:8000/#/index”；</a></li>
-<li>当我们访问用户列表时，通过页面location.hash事件触发，我们的URL变成“<a href="http://localhost:8000/#/users/list”，根据URL协议，#之后的内容不会发送给服务器，">http://localhost:8000/#/users/list”，根据URL协议，#之后的内容不会发送给服务器，</a>
+<li>当我们访问“http://localhost:8000/”时，我们首先打开了默认的index.html页面；
+然后我们被重定向到一个新地址，比如：“http://localhost:8000/#/index”；</li>
+<li>当我们访问用户列表时，通过页面location.hash事件触发，我们的URL变成“http://localhost:8000/#/users/list”，根据URL协议，#之后的内容不会发送给服务器，
 对后台来说URL未变不需要它实现路由了，我们通过hashchange事件监听url变化，发送ajax请求向后台请求数据局部刷新页面，实现了页面的正确加载显示。</li>
-<li>当我们访问其它页面时，比如部门列表时，就变成了“<a href="http://localhost:8000/#/depts/list”，同理。">http://localhost:8000/#/depts/list”，同理。</a></li>
+<li>当我们访问其它页面时，比如部门列表时，就变成了“http://localhost:8000/#/depts/list”，同理。</li>
 </ol>
-
 <p>通过上面的分析，我们实现了路由控制从后台向前端的转移，并同样完成了页面的正确加载显示。</p>
-
 <h3 id="history方式">history方式</h3>
-
 <p>这是HTML 5新增的方式，它可以在不刷新页面的前提下动态改变浏览器地址栏中的URL地址，动态修改页面上所显示资源。</p>
-
 <ol>
-<li>当我们访问“<a href="http://localhost:8000/”时，我们首先打开了默认的index.html页面；然后我们被重定向到一个新地址，">http://localhost:8000/”时，我们首先打开了默认的index.html页面；然后我们被重定向到一个新地址，</a>
-比如：“<a href="http://localhost:8000/index”；">http://localhost:8000/index”；</a></li>
-<li>当我们访问用户列表时，通过页面history.pushState()事件触发，我们的URL变成“<a href="http://localhost:8000/users/list”，根据history">http://localhost:8000/users/list”，根据history</a> API的实现，我们会修改地址栏的地址，但不会
+<li>当我们访问“http://localhost:8000/”时，我们首先打开了默认的index.html页面；然后我们被重定向到一个新地址，
+比如：“http://localhost:8000/index”；</li>
+<li>当我们访问用户列表时，通过页面history.pushState()事件触发，我们的URL变成“http://localhost:8000/users/list”，根据history API的实现，我们会修改地址栏的地址，但不会
 向后台发送请求，再通过popState事件监听到了url的变化，发送ajax请求向后台请求数据之后局部刷新页面。</li>
 <li>当我们访问其它页面时，也是同样的原理。</li>
 </ol>
-
 <p>这两种方式的优缺点网上有很多，我就不再啰嗦了。</p>
-
 <h2 id="404问题">404问题</h2>
-
 <p>前后端分离的单页应用，我们使用history方式，开开心心地build完代码扔给后台部署之后一切正常。但测试人员反应，一旦刷新，就会报404的错误。
-比如，我们在页面“<a href="http://localhost:8000/users/list”F5刷新时，就报了404错误。但我们本地开发一切正常啊？">http://localhost:8000/users/list”F5刷新时，就报了404错误。但我们本地开发一切正常啊？</a></p>
-
+比如，我们在页面“http://localhost:8000/users/list”F5刷新时，就报了404错误。但我们本地开发一切正常啊？</p>
 <p>这是怎么会事呢？</p>
-
 <p>因为使用history模式的路由中，路由是虚拟的，后台并不存在相应的物理路径和文件。
 比如，当刷新页面时，浏览器会向服务器请求/users/list，服务器实际会去找根目录下/users/list.html这个文件，发现找不到，
 因为实际上我们的服务器并没有这样的物理路径/文件，所有内容都是通过Restful风格的接口返回数据通过前端自己渲染的，自然会报404错误。
 而开发时，内置的服务器已经帮我们做了处理，我们当然发现不了。</p>
-
 <p>要解决这个问题也很简单，只要将所有请求到统一转发到首页，利用首页加载的js解析地址栏路由动态请求数据刷新页面完成显示。</p>
-
 <p>比如nginx这样配置：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml">try_files $url /index.html</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-xml" data-lang="xml">try_files $url /index.html
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -626,7 +593,9 @@ Google将Ajax发扬光大后，异步的局部刷新流行开来，但Ajax的无
 
   <span class="copyright-year">
     &copy;
-    2019
+    
+      2019 -
+    2020
     <span class="heart">
       
       <i class="iconfont">

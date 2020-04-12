@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.69.0" />
 
 
 <link rel="canonical" href="https://hankaibo.github.io/post/2019/2019-10-08/" />
@@ -67,16 +67,13 @@
 <meta property="article:modified_time" content="2019-10-08T19:29:32+08:00" />
 <meta itemprop="name" content="TeamViewer替代方案之OpenVPN">
 <meta itemprop="description" content="时隔多日，正好公司同事需要使用OpenVPN，我有点时间就研究安装试了试。 从网上搜索了下，文章一大堆，方式主要有三种，简单说明一下。 第一种，">
-
-
 <meta itemprop="datePublished" content="2019-10-08T19:29:32&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-08T19:29:32&#43;08:00" />
 <meta itemprop="wordCount" content="889">
 
 
 
-<meta itemprop="keywords" content="TeamViewer,OpenVPN," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="TeamViewer,OpenVPN," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TeamViewer替代方案之OpenVPN"/>
 <meta name="twitter:description" content="时隔多日，正好公司同事需要使用OpenVPN，我有点时间就研究安装试了试。 从网上搜索了下，文章一大堆，方式主要有三种，简单说明一下。 第一种，"/>
 
@@ -325,53 +322,43 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#服务端配置">服务端配置：</a></li>
-<li><a href="#客户端配置">客户端配置：</a></li>
-<li><a href="#参考">参考：</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#服务端配置">服务端配置：</a></li>
+    <li><a href="#客户端配置">客户端配置：</a></li>
+    <li><a href="#参考">参考：</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>时隔多日，正好公司同事需要使用OpenVPN，我有点时间就研究安装试了试。</p>
-
+      <p>时隔多日，正好公司同事需要使用OpenVPN，我有点时间就研究安装试了试。</p>
 <p>从网上搜索了下，文章一大堆，方式主要有三种，简单说明一下。</p>
-
 <p>第一种，就是最传统的方式，手动更新依赖包，安装OpenVPN的各种依赖，手动配置证书等等；</p>
-
 <p>第二种，有大神网友写了安装脚本，对方式一进行了封装，只要运行安装脚本即可；</p>
-
 <p>第三种，与方式二相似，只不过是基于docker的环境，正好前段时间简单研究了下docker，并应用在自己的项目中，故使用它。</p>
-
 <p>安装步骤参考官方说明，经过一番折腾，略为明白了，现记录如下：</p>
-
 <h2 id="服务端配置">服务端配置：</h2>
-
 <ol>
-<li><p>定义临时变量</p>
+<li>
+<p>定义临时变量</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"># 这个变量是方便下面命令行引用，如果不定义，直接使用确定的路径也可以。临时的意思是，关闭终端后，这个变量就不在存在了。
-OVPN_DATA = &#34;ovpn-data-example&#34;</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 这个变量是方便下面命令行引用，如果不定义，直接使用确定的路径也可以。临时的意思是，关闭终端后，这个变量就不在存在了。</span>
+<span class="nv">OVPN_DATA</span> <span class="o">=</span> <span class="s2">&#34;ovpn-data-example&#34;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
-
-<li><p>初始化数据卷及运行openVPN容器</p>
+<li>
+<p>初始化数据卷及运行openVPN容器</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -379,86 +366,92 @@ OVPN_DATA = &#34;ovpn-data-example&#34;</code></pre></td></tr></table>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"># 创建数据卷，避免污染镜像
-docker volume create --name $OVPN_DATA
-# 拉取最新的镜像，并运行它为一个容器，VPN.SERVERNAME.COM 换成你的域名或者IP地址
-docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm kylemanna/openvpn ovpn_genconfig -u udp://VPN.SERVERNAME.COM
-# 配置秘钥，这里会有交互提示，输入密码、重复密码、证书名称、再次密码(这个密码是用来生成客户端秘钥文件时使用的，可以防止他人随意使用 openVPN 服务器端生成客户端秘钥。)
-docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm -it kylemanna/openvpn ovpn_initpki</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 创建数据卷，避免污染镜像</span>
+docker volume create --name <span class="nv">$OVPN_DATA</span>
+<span class="c1"># 拉取最新的镜像，并运行它为一个容器，VPN.SERVERNAME.COM 换成你的域名或者IP地址</span>
+docker run -v <span class="nv">$OVPN_DATA</span>:/etc/openvpn --log-driver<span class="o">=</span>none --rm kylemanna/openvpn ovpn_genconfig -u udp://VPN.SERVERNAME.COM
+<span class="c1"># 配置秘钥，这里会有交互提示，输入密码、重复密码、证书名称、再次密码(这个密码是用来生成客户端秘钥文件时使用的，可以防止他人随意使用 openVPN 服务器端生成客户端秘钥。)</span>
+docker run -v <span class="nv">$OVPN_DATA</span>:/etc/openvpn --log-driver<span class="o">=</span>none --rm -it kylemanna/openvpn ovpn_initpki
+</code></pre></td></tr></table>
 </div>
 </div></li>
-
-<li><p>启动OpenVPN服务端</p>
+<li>
+<p>启动OpenVPN服务端</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script">docker run -v $OVPN_DATA:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">docker run -v <span class="nv">$OVPN_DATA</span>:/etc/openvpn -d -p 1194:1194/udp --cap-add<span class="o">=</span>NET_ADMIN kylemanna/openvpn
+</code></pre></td></tr></table>
 </div>
 </div></li>
-
-<li><p>生成客户端证书</p>
+<li>
+<p>生成客户端证书</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"># CLIENTNAME 为要客户端名称，比如张三使用，就用 zhangsan 之类的标示一下。nopass 说明不需要密码，就是客户端连接时不里奇发密码。
-# 如果上个步骤配置了生成密码，就输入上面的密码（使用上面步骤2配置的密码，才能生成客户端秘钥）。
-docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># CLIENTNAME 为要客户端名称，比如张三使用，就用 zhangsan 之类的标示一下。nopass 说明不需要密码，就是客户端连接时不里奇发密码。</span>
+<span class="c1"># 如果上个步骤配置了生成密码，就输入上面的密码（使用上面步骤2配置的密码，才能生成客户端秘钥）。</span>
+docker run -v <span class="nv">$OVPN_DATA</span>:/etc/openvpn --log-driver<span class="o">=</span>none --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
+</code></pre></td></tr></table>
 </div>
 </div></li>
-
-<li><p>导出客户端配置</p>
+<li>
+<p>导出客户端配置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"># CLIENTNAME.ovpn 就是要生成的客户端配置，下文客户端需要使用它。
-docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm kylemanna/openvpn ovpn_getclient CLIENTNAME &gt; CLIENTNAME.ovpn</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># CLIENTNAME.ovpn 就是要生成的客户端配置，下文客户端需要使用它。</span>
+docker run -v <span class="nv">$OVPN_DATA</span>:/etc/openvpn --log-driver<span class="o">=</span>none --rm kylemanna/openvpn ovpn_getclient CLIENTNAME &gt; CLIENTNAME.ovpn
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
-
 <h2 id="客户端配置">客户端配置：</h2>
-
 <ol>
-<li><p>下载</p>
-
-<p>从官网下载相应的客户端安装程序，网址<a href="https://openvpn.net/community-downloads/">https://openvpn.net/community-downloads/</a> (可能需要科学上网)。</p></li>
-
-<li><p>安装</p>
-
-<p>依 Windows 为例，就是下一步、下一步。</p></li>
-
-<li><p>安装秘钥</p>
-
+<li>
+<p>下载</p>
+<p>从官网下载相应的客户端安装程序，网址<a href="https://openvpn.net/community-downloads/">https://openvpn.net/community-downloads/</a> (可能需要科学上网)。</p>
+</li>
+<li>
+<p>安装</p>
+<p>依 Windows 为例，就是下一步、下一步。</p>
+</li>
+<li>
+<p>安装秘钥</p>
 <p>将服务端生成的 CLIENTNAME.ovpn 放到程序的安装目录config下，例如我的是 C:\Program Files\OpenVPN\config 目录。</p>
-
-<p>或者运行之后，使用【导入配置文件&hellip;】，将其导入。</p></li>
-
-<li><p>运行</p>
-
-<p>启动客户端程序，选择连接即可。</p></li>
+<p>或者运行之后，使用【导入配置文件&hellip;】，将其导入。</p>
+</li>
+<li>
+<p>运行</p>
+<p>启动客户端程序，选择连接即可。</p>
+</li>
 </ol>
-
 <h2 id="参考">参考：</h2>
-
 <ul>
-<li><p><a href="https://github.com/kylemanna/docker-openvpn">https://github.com/kylemanna/docker-openvpn</a></p></li>
-
-<li><p><a href="https://www.dgstack.cn/archives/2498.html">https://www.dgstack.cn/archives/2498.html</a></p></li>
-
-<li><p><a href="http://blog.joylau.cn/2018/11/21/Docker-OpenVPN/">http://blog.joylau.cn/2018/11/21/Docker-OpenVPN/</a></p></li>
-
-<li><p><a href="https://neversec.top/20190515/openvqn.html#%E5%89%8D%E8%A8%80">https://neversec.top/20190515/openvqn.html#%E5%89%8D%E8%A8%80</a></p></li>
-
-<li><p><a href="https://zlxdike.github.io/2019/04/28/OpenVpn%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">https://zlxdike.github.io/2019/04/28/OpenVpn%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</a></p></li>
+<li>
+<p><a href="https://github.com/kylemanna/docker-openvpn">https://github.com/kylemanna/docker-openvpn</a></p>
+</li>
+<li>
+<p><a href="https://www.dgstack.cn/archives/2498.html">https://www.dgstack.cn/archives/2498.html</a></p>
+</li>
+<li>
+<p><a href="http://blog.joylau.cn/2018/11/21/Docker-OpenVPN/">http://blog.joylau.cn/2018/11/21/Docker-OpenVPN/</a></p>
+</li>
+<li>
+<p><a href="https://neversec.top/20190515/openvqn.html#%E5%89%8D%E8%A8%80">https://neversec.top/20190515/openvqn.html#%E5%89%8D%E8%A8%80</a></p>
+</li>
+<li>
+<p><a href="https://zlxdike.github.io/2019/04/28/OpenVpn%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">https://zlxdike.github.io/2019/04/28/OpenVpn%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</a></p>
+</li>
 </ul>
 
     </div>
@@ -610,7 +603,9 @@ docker run -v $OVPN_DATA:/etc/openvpn --log-driver=none --rm kylemanna/openvpn o
 
   <span class="copyright-year">
     &copy;
-    2019
+    
+      2019 -
+    2020
     <span class="heart">
       
       <i class="iconfont">

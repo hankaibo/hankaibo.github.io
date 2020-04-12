@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.69.0" />
 
 
 <link rel="canonical" href="https://hankaibo.github.io/post/2019/2019-08-12/" />
@@ -67,16 +67,13 @@
 <meta property="article:modified_time" content="2019-08-12T17:16:11+08:00" />
 <meta itemprop="name" content="TeamViewer替代方案之frp">
 <meta itemprop="description" content="原因前文已述，不再多言。 frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资料，">
-
-
 <meta itemprop="datePublished" content="2019-08-12T17:16:11&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-12T17:16:11&#43;08:00" />
 <meta itemprop="wordCount" content="1535">
 
 
 
-<meta itemprop="keywords" content="TeamViewer,frp," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="TeamViewer,frp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TeamViewer替代方案之frp"/>
 <meta name="twitter:description" content="原因前文已述，不再多言。 frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资料，"/>
 
@@ -325,66 +322,48 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#配置服务端-frps">配置服务端 frps：</a></li>
-<li><a href="#配置客户端-frpc">配置客户端 frpc：</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#配置服务端-frps">配置服务端 frps：</a></li>
+    <li><a href="#配置客户端-frpc">配置客户端 frpc：</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>原因<a href="https://hankaibo.github.io/post/2019/2019-08-07">前文</a>已述，不再多言。</p>
-
+      <p>原因<a href="https://hankaibo.github.io/post/2019/2019-08-07">前文</a>已述，不再多言。</p>
 <p>frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。</p>
-
 <p>正向代理，比如你想通过Google查点资料，结果被和谐了。这时呢，你下载了一款科学上网软件，装上它之后再连接Google，妥了。</p>
-
 <p>背后原理是什么呢？</p>
-
 <p>在这里科学上网充当了一个正向代理的角色，当你访问Google时，它把你浏览器的请求拿过来发到它在国外的服务器上，国外的服务器再向Google请求。
 因为国外没有墙，自然能访问Google了。得到Google的回复后再转给你。对于Google来说，它认为是那个服务器访问的它。
 服务器就是正向代理，正向代理隐藏了真实的客户端（你）。</p>
-
 <p>反向代理，与此相反。</p>
-
-<p>当你在北京访问 www.baidu.com 服务器 nginx 时，nginx 指派北京的服务器把你要的内容返还给你，因为北京这台服务器离你近，反应快；
+<p>当你在北京访问 <a href="http://www.baidu.com">www.baidu.com</a> 服务器 nginx 时，nginx 指派北京的服务器把你要的内容返还给你，因为北京这台服务器离你近，反应快；
 当你在广州时，nginx 指派广州的服务器把内容返回给你，因为此时它发现广州的服务器离你近，反应快。</p>
-
 <p>但是对于你来说，这一切都是透明的。你一直认为自己访问的就是 baidu，到底是那台服务器响应你的，你根本不关心。在这里 nginx 就是反向代理，
 反向代理隐藏真实服务端。</p>
-
 <p>我们安装的 frp 就是一个类似 nginx 的反向代理，你通过远程桌面连接它，它就指派公司电脑响应你。实现了远程办公的功能。</p>
-
 <p>前提条件：</p>
-
 <ol>
 <li>一个公网服务器（阿里云、腾讯云、华为云……）；</li>
 <li>公司电脑一台；</li>
 <li>家里电脑一台。</li>
 </ol>
-
 <h2 id="配置服务端-frps">配置服务端 frps：</h2>
-
 <ol>
-<li><p>下载</p>
-
-<p>安装包地址<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a>，选择适合服务器的版本；</p></li>
-
-<li><p>解压</p>
-
+<li>
+<p>下载</p>
+<p>安装包地址<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a>，选择适合服务器的版本；</p>
+</li>
+<li>
+<p>解压</p>
 <p>解压之后可以看到一些frps为前缀的文件，这些是服务端(server)使用的；frpc前缀的文件是客户端(client)使用的。</p>
-
 <p>frps_full.ini是示例文件，供我们参考。我们主要编辑frps.ini文件。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -397,51 +376,52 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"># 配置开始设置
-[common]
-# frp 服务端端口（必须）
-bind_port = 7000
-# frp 服务端token（必须）
-token = 12345678
-    
-# 仪表盘端口、用户名、密码（方便后台查看连接情况）
-dashboard_port = 7500
-dashboard_user = admin
-dabshboard_pwd = admin</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 配置开始设置</span>
+<span class="o">[</span>common<span class="o">]</span>
+<span class="c1"># frp 服务端端口（必须）</span>
+<span class="nv">bind_port</span> <span class="o">=</span> <span class="m">7000</span>
+<span class="c1"># frp 服务端token（必须）</span>
+<span class="nv">token</span> <span class="o">=</span> <span class="m">12345678</span>
+   
+<span class="c1"># 仪表盘端口、用户名、密码（方便后台查看连接情况）</span>
+<span class="nv">dashboard_port</span> <span class="o">=</span> <span class="m">7500</span>
+<span class="nv">dashboard_user</span> <span class="o">=</span> admin
+<span class="nv">dabshboard_pwd</span> <span class="o">=</span> admin
+</code></pre></td></tr></table>
 </div>
 </div></li>
-
-<li><p>启动</p>
+<li>
+<p>启动</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script">frps -c frps.ini</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">frps -c frps.ini
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>这时就可以访问仪表盘查看连接情况等信息。例如 <a href="http://xxx.xxx.xxx.xxx:7500">http://xxx.xxx.xxx.xxx:7500</a> ，输入用户名/密码（admin/admin）就 OK 了。</p>
-
+</div><p>这时就可以访问仪表盘查看连接情况等信息。例如 <a href="http://xxx.xxx.xxx.xxx">http://xxx.xxx.xxx.xxx</a>:7500 ，输入用户名/密码（admin/admin）就 OK 了。</p>
 <p>为了保证关闭终端后它依然工作需要使用nohup命令，例如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script">nohup frps -c frps.ini</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">nohup frps -c frps.ini
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
-
 <h2 id="配置客户端-frpc">配置客户端 frpc：</h2>
-
 <ol>
-<li><p>下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。</p></li>
-
-<li><p>打开frpc.ini，配置如下：</p>
+<li>
+<p>下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。</p>
+</li>
+<li>
+<p>打开frpc.ini，配置如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -465,46 +445,48 @@ dabshboard_pwd = admin</code></pre></td></tr></table>
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"># 配置开始
-[common]
-# 你的服务器ip地址或者域名（就是上面配置服务端所在机器的地址）
-server_addr = 0.0.0.0
-# 服务器端口，默认为7000（与上面服务端配置保持相同）
-server_port = 7000
-# 类似于密码（与上面服务端配置保持相同）
-token = 12345678
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 配置开始</span>
+<span class="o">[</span>common<span class="o">]</span>
+<span class="c1"># 你的服务器ip地址或者域名（就是上面配置服务端所在机器的地址）</span>
+<span class="nv">server_addr</span> <span class="o">=</span> 0.0.0.0
+<span class="c1"># 服务器端口，默认为7000（与上面服务端配置保持相同）</span>
+<span class="nv">server_port</span> <span class="o">=</span> <span class="m">7000</span>
+<span class="c1"># 类似于密码（与上面服务端配置保持相同）</span>
+<span class="nv">token</span> <span class="o">=</span> <span class="m">12345678</span>
 
-# 远程桌面连接的名字，随意命名
-[rdp] 
-# 远程连接使用的协议
-type = tcp 
-# 本地ip，填你需要转发到的目的ip
-# 如果是转发到frp客户端所在本机则填 127.0.0.1
-# 否则填对应机器的内网ip
-local_ip = 127.0.0.1
-# 远程桌面连接使用的端口
-local_port = 3389
-# frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问
-# 客户端的 local_port，如果填0则会随机分配一个端口
-remote_port = 7001</code></pre></td></tr></table>
+<span class="c1"># 远程桌面连接的名字，随意命名</span>
+<span class="o">[</span>rdp<span class="o">]</span> 
+<span class="c1"># 远程连接使用的协议</span>
+<span class="nb">type</span> <span class="o">=</span> tcp 
+<span class="c1"># 本地ip，填你需要转发到的目的ip</span>
+<span class="c1"># 如果是转发到frp客户端所在本机则填 127.0.0.1</span>
+<span class="c1"># 否则填对应机器的内网ip</span>
+<span class="nv">local_ip</span> <span class="o">=</span> 127.0.0.1
+<span class="c1"># 远程桌面连接使用的端口</span>
+<span class="nv">local_port</span> <span class="o">=</span> <span class="m">3389</span>
+<span class="c1"># frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问</span>
+<span class="c1"># 客户端的 local_port，如果填0则会随机分配一个端口</span>
+<span class="nv">remote_port</span> <span class="o">=</span> <span class="m">7001</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
-
-<li><p>运行，使用 cmd 或者 PowerShell 进入目录，执行</p>
+<li>
+<p>运行，使用 cmd 或者 PowerShell 进入目录，执行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script">frpc.exe -c frpc.ini</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">frpc.exe -c frpc.ini
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>这样当在家用使用 mstsc 访问 xxx.xxx.xxx.xxx:7001 时，服务器就会指定这个客户端响应，也就是我们远程连接到公司电脑上了。</p></li>
-
-<li><p>开机自启，编写批处理脚本frp.bat：</p>
+</div><p>这样当在家用使用 mstsc 访问 xxx.xxx.xxx.xxx:7001 时，服务器就会指定这个客户端响应，也就是我们远程连接到公司电脑上了。</p>
+</li>
+<li>
+<p>开机自启，编写批处理脚本frp.bat：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -514,24 +496,21 @@ remote_port = 7001</code></pre></td></tr></table>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell script" data-lang="shell script">@echo off
-if &#34;%1&#34; == &#34;h&#34; goto begin
-mshta vbscript:createobject(&#34;wscript.shell&#34;).run(&#34;&#34;&#34;%~nx0&#34;&#34; h&#34;,0)(window.close)&amp;&amp;exit
+<pre class="chroma"><code class="language-shell" data-lang="shell">@echo off
+<span class="k">if</span> <span class="s2">&#34;%1&#34;</span> <span class="o">==</span> <span class="s2">&#34;h&#34;</span> goto begin
+mshta vbscript:createobject<span class="o">(</span><span class="s2">&#34;wscript.shell&#34;</span><span class="o">)</span>.run<span class="o">(</span><span class="s2">&#34;&#34;&#34;%~nx0&#34;&#34; h&#34;</span>,0<span class="o">)(</span>window.close<span class="o">)&amp;&amp;</span><span class="nb">exit</span>
 :begin
 REM
-cd 你的目录
+<span class="nb">cd</span> 你的目录
 frpc -c frpc.ini
-exit</code></pre></td></tr></table>
+<span class="nb">exit</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
-
 <p>生成bat的快捷方式，并放在启动目录下</p>
-
 <p>所有用户目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</p>
-
 <p>或者当前用户：C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</p>
-
 <p>即可开机自启。</p>
 
     </div>
@@ -683,7 +662,9 @@ exit</code></pre></td></tr></table>
 
   <span class="copyright-year">
     &copy;
-    2019
+    
+      2019 -
+    2020
     <span class="heart">
       
       <i class="iconfont">
