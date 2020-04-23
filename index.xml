@@ -1,923 +1,1058 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>韩凯波的个人博客</title><link>https://hankaibo.github.io/</link><description>Recent content on 韩凯波的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 30 Jan 2019 16:32:08 +0800</lastBuildDate><atom:link href="https://hankaibo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2002 04 24</title><link>https://hankaibo.github.io/post/2020/2002-04-24/</link><pubDate>Fri, 24 Apr 2020 00:07:26 +0800</pubDate><guid>https://hankaibo.github.io/post/2020/2002-04-24/</guid><description>&lt;p>test github actions&lt;/p></description></item><item><title>React 脚手架/模板选型</title><link>https://hankaibo.github.io/post/2020/2020-04-12/</link><pubDate>Sun, 12 Apr 2020 16:15:15 +0800</pubDate><guid>https://hankaibo.github.io/post/2020/2020-04-12/</guid><description>&lt;h2 id="react-脚手架选择">React 脚手架选择&lt;/h2>
-&lt;p>刚进公司时，我们前端组新建，两个人。领导让我们自定框架，同事一直在用 React ，我们就从 github 上选择了 &lt;a href="https://github.com/ant-design/ant-design-pro">antdpro&lt;/a> 作为我们的前端基础脚手架。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>韩凯波的个人博客</title>
+    <link>https://hankaibo.github.io/</link>
+    <description>Recent content on 韩凯波的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 30 Jan 2019 16:32:08 +0800</lastBuildDate>
+    
+        <atom:link href="https://hankaibo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2002 04 24</title>
+      <link>https://hankaibo.github.io/post/2020/2002-04-24/</link>
+      <pubDate>Fri, 24 Apr 2020 00:07:26 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2020/2002-04-24/</guid>
+      
+        <description>&lt;p&gt;test github actions&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>React 脚手架/模板选型</title>
+      <link>https://hankaibo.github.io/post/2020/2020-04-12/</link>
+      <pubDate>Sun, 12 Apr 2020 16:15:15 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2020/2020-04-12/</guid>
+      
+        <description>&lt;h2 id=&#34;react-脚手架选择&#34;&gt;React 脚手架选择&lt;/h2&gt;
+&lt;p&gt;刚进公司时，我们前端组新建，两个人。领导让我们自定框架，同事一直在用 React ，我们就从 github 上选择了 &lt;a href=&#34;https://github.com/ant-design/ant-design-pro&#34;&gt;antdpro&lt;/a&gt; 作为我们的前端基础脚手架。
 选择它的原因一是阿里出品，阿里作为中国前端界的少林泰斗，技术水平顶尖，而且该框架也在其内部使用良久，经得住各种考验；二是中文文档齐全，
-对于我这种英文渣渣来说，母语太亲切了。&lt;/p>
-&lt;p>后来，鉴于其太重，决定选择新脚手架替换之，我又负责提供候选脚手架。选择范围当然是 github 了。其它标准如下：&lt;/p>
-&lt;ul>
-&lt;li>非服务端渲染&lt;/li>
-&lt;li>非 GraphQL&lt;/li>
-&lt;li>非 Umi&lt;/li>
-&lt;li>各 master 分支最后提交时间不晚于 2018-12-31&lt;/li>
-&lt;/ul>
-&lt;p>基于以上标准，并主要按 Star 降序排列之后，有以下脚手架入选，先一一点评两句。&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>脚手架&lt;/th>
-&lt;th>create-react-app&lt;/th>
-&lt;th>react-boilerplate&lt;/th>
-&lt;th>react-slingshot&lt;/th>
-&lt;th>react-pxq&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>网址&lt;/td>
-&lt;td>&lt;a href="https://github.com/facebook/create-react-app">create-react-app&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://github.com/react-boilerplate/react-boilerplate">react-boilerplate&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://github.com/coryhouse/react-slingshot">react-slingshot&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://github.com/bailicangdu/react-pxq">react-pxq&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>语言&lt;/td>
-&lt;td>js、ts&lt;/td>
-&lt;td>js&lt;/td>
-&lt;td>js&lt;/td>
-&lt;td>js&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>路由&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>状态管理&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>样式&lt;/td>
-&lt;td>css&lt;/td>
-&lt;td>css&lt;/td>
-&lt;td>scss、css&lt;/td>
-&lt;td>less、css&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>国际化&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>x&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>代码检查&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>测试&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Data API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>工具&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>热部署&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Star&lt;/td>
-&lt;td>77.5k&lt;/td>
-&lt;td>25k&lt;/td>
-&lt;td>9.6k&lt;/td>
-&lt;td>6.7k&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Fork&lt;/td>
-&lt;td>18.6k&lt;/td>
-&lt;td>5.2k&lt;/td>
-&lt;td>1.7k&lt;/td>
-&lt;td>2.1k&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>时间&lt;/td>
-&lt;td>2020-04-07&lt;/td>
-&lt;td>2019-04-19&lt;/td>
-&lt;td>2020-03-30&lt;/td>
-&lt;td>2019-06-26&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>自由度&lt;/td>
-&lt;td>高&lt;/td>
-&lt;td>高&lt;/td>
-&lt;td>高&lt;/td>
-&lt;td>高&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>脚手架&lt;/th>
-&lt;th>react-admin&lt;/th>
-&lt;th>react&lt;/th>
-&lt;th>airframe-react&lt;/th>
-&lt;th>arc&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>网址&lt;/td>
-&lt;td>&lt;a href="https://github.com/yezihaohao/react-admin">react-admin&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://github.com/duxianwei520/react">react&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://github.com/duxianwei520/react">airframe-react&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://github.com/duxianwei520/react">arc&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>语言&lt;/td>
-&lt;td>ts&lt;/td>
-&lt;td>js&lt;/td>
-&lt;td>js&lt;/td>
-&lt;td>js&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>路由&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>状态管理&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>x&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>样式&lt;/td>
-&lt;td>scss、css&lt;/td>
-&lt;td>less、css&lt;/td>
-&lt;td>scss、css&lt;/td>
-&lt;td>css&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>国际化&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>x&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>代码检查&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>测试&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Data API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>工具&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>热部署&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Star&lt;/td>
-&lt;td>4.8k&lt;/td>
-&lt;td>3.5k&lt;/td>
-&lt;td>2.7k&lt;/td>
-&lt;td>2.5k&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Fork&lt;/td>
-&lt;td>1.4k&lt;/td>
-&lt;td>1.3k&lt;/td>
-&lt;td>307&lt;/td>
-&lt;td>257&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>时间&lt;/td>
-&lt;td>2020-04-09&lt;/td>
-&lt;td>2020-01-16&lt;/td>
-&lt;td>2020-03-30&lt;/td>
-&lt;td>2019-08-30&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>自由度&lt;/td>
-&lt;td>高&lt;/td>
-&lt;td>高&lt;/td>
-&lt;td>较高&lt;/td>
-&lt;td>高&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>脚手架&lt;/th>
-&lt;th>react-webpack-babel&lt;/th>
-&lt;th>dva-boot-admin&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>网址&lt;/td>
-&lt;td>&lt;a href="https://github.com/yezihaohao/react-admin">react-webpack-babel&lt;/a>&lt;/td>
-&lt;td>&lt;a href="https://github.com/LANIF-UI/dva-boot-admin">dva-boot-admin&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>语言&lt;/td>
-&lt;td>js&lt;/td>
-&lt;td>js&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>路由&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>状态管理&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>样式&lt;/td>
-&lt;td>scss、css&lt;/td>
-&lt;td>less、css&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>国际化&lt;/td>
-&lt;td>x&lt;/td>
-&lt;td>x&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>代码检查&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>测试&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Data API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;td>Web API&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>工具&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;td>webpack&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>热部署&lt;/td>
-&lt;td>√&lt;/td>
-&lt;td>√&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Star&lt;/td>
-&lt;td>1.2k&lt;/td>
-&lt;td>1.2k&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Fork&lt;/td>
-&lt;td>433&lt;/td>
-&lt;td>346&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>时间&lt;/td>
-&lt;td>2020-01-26&lt;/td>
-&lt;td>2020-03-24&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>自由度&lt;/td>
-&lt;td>高&lt;/td>
-&lt;td>较高&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>&lt;strong>create-react-app&lt;/strong>，facebook 官方出品，极简到极致，啥都没有了。没有路由、没有状态管理，没有配置文件，纯 React ，真是一点不能再干净了。适合学习，如果有很强的webpack配置能力，可在其基础上自建；&lt;/p>
-&lt;p>&lt;strong>react-boilerplate&lt;/strong>，集成了路由、状态管理(redux-saga)、国际化等功能，全套服务，可用于生产环境；&lt;/p>
-&lt;p>&lt;strong>react-slingshot&lt;/strong>，集成了路由、状态管理，但状态管理使用 redux-thunk，据说没有 redux-saga 好用；&lt;/p>
-&lt;p>&lt;strong>react-pxq&lt;/strong>，基本上就是 create-react-app + 作者的自定义，集成了路由、状态管理(redux-thunk)等常用功能；&lt;/p>
-&lt;p>&lt;strong>react-admin&lt;/strong>，create-react-app的ts版本 + 作者的自定义，集成了路由、状态管理(redux-thunk)等，自定义页面较多；&lt;/p>
-&lt;p>&lt;strong>react&lt;/strong>，作者手工打造，集成路由、状态管理(redux-thunk)等；&lt;/p>
-&lt;p>&lt;strong>airframe-react&lt;/strong>，使用了一套bootstrap的ui，没有状态管理，类似于bootstrap的仪表盘管理演示，个人不喜欢；&lt;/p>
-&lt;p>&lt;strong>arc&lt;/strong>，感觉就是一个create-react-app的示例加强版本，封装没有create-react-app 好，更新也比不了，选它不如直接选择 create-react-app；&lt;/p>
-&lt;p>&lt;strong>react-webpack-babel&lt;/strong>，这真是一个入门配置，没有状态管理，不如create-react-app；&lt;/p>
-&lt;p>&lt;strong>dva-boot-admin&lt;/strong>，从名字上可以看出来，状态管理是dva（封装了redux-saga），作者又在上封装了一层（估计类似于umi了)，整体给我感觉就是create-react-app + dva(umi)，感觉可以快等于antdpro了。&lt;/p>
-&lt;p>综合来看，大部分脚手架都借鉴 create-react-app ，在其上做了自定义，但状态管理又没有使用redux-saga的强大。如果让我选择，我会直接选择react-boilerplate这款。虽然它更新还停留在去年4月份，但 dev 分支一直在保持更新。&lt;/p></description></item><item><title>Maven 配置 https 仓库</title><link>https://hankaibo.github.io/post/2019/2019-10-14/</link><pubDate>Mon, 14 Oct 2019 14:20:53 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-10-14/</guid><description>&lt;p>一直使用阿里的maven镜像，快。&lt;/p>
-&lt;p>上周才发现阿里更新了镜像的配置地址，兴冲冲地照原样抄袭了下来。&lt;/p>
-&lt;p>更新完之后才发现无法编译打包了，pom.xml 文件也提示有错误。报错信息类似这样：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="o">[&lt;/span>WARNING&lt;span class="o">]&lt;/span> Could not transfer metadata xxxxxxx from/to https://maven.aliyun.com/repository/public: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>面向 google 编程之后，才知道因为阿里云的 maven 仓库升级为 https 协议了，我们IDEA使用 maven 编译打包时，调用本机的 JDK ，JDK 发现阿里云 maven 地址的 https 证书不在它的证书库里。然后就报错了。&lt;/p>
-&lt;p>解决办法当然是把证书导入到 JDK 的证书库里去。&lt;/p>
-&lt;p>步骤如下：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;h2 id="下载阿里云-maven-的证书">下载阿里云 maven 的证书&lt;/h2>
-&lt;p>下载证书很容易，我们只要用浏览器访问阿里云 maven 仓库的网址，就会发现地址栏最前面有一个绿色小锁子，打开小锁子，在里面就能找到证书，将其导出就可以啦。&lt;/p>
-&lt;p>推荐使用 firefox,chrome 浏览器，比 ie 查找证书方便多了。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;h2 id="导入阿里云的证书">导入阿里云的证书&lt;/h2>
-&lt;p>如何导入呢？&lt;/p>
-&lt;p>JDK 的证书库是一个文件，目录可能如下：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">C:&lt;span class="se">\P&lt;/span>rogram Files&lt;span class="se">\A&lt;/span>doptOpenJDK&lt;span class="se">\j&lt;/span>dk-11.0.4.11-hotspot&lt;span class="se">\l&lt;/span>ib&lt;span class="se">\s&lt;/span>ecurity
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>我使用的是AdoptOpenJDK，Oracle 的也一样。这个目录下的 cacerts 就是 JDK 的证书库。我们把下载的阿里云证书导入它里面就可以了。&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">keytool -import -alias 证书别名 -keystore 证书库 -file 阿里云证书 -trustcacerts -storepass changeit
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>证书别名，名称随意，最好能让人一眼明白这个证书的来源等，例如可以叫 aliyun.maven.cer；&lt;/p>
-&lt;p>证书库，这个就是我们 JDK 的cacerts了；&lt;/p>
-&lt;p>阿里云证书，就是我们刚才下载的证书；&lt;/p>
-&lt;p>changeit，是默认的密码，不用修改。&lt;/p>
-&lt;p>如果提示是否确认，输入 yes | y 就行。
-只要路径正确，证书就完成导入了。后面就可以开开心心地编译啦。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>这种导入方式虽然简单，但缺点也同样明显。如果我们升级 JDK 版本之后，必须再来一遍；而且仅仅为了 maven 编译就导入一个证书有风险隐患，更科学合理的方式就是使用 maven 的自定义证书库，这个我下次学会了再分享。😅&lt;/p>
-&lt;h2 id="参考">参考&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://www.playpi.org/2018082501.html">https://www.playpi.org/2018082501.html&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://kael-aiur.com/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/maven%E6%B7%BB%E5%8A%A0%E4%BF%A1%E4%BB%BB%E8%AF%81%E4%B9%A6.html">http://kael-aiur.com/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/maven%E6%B7%BB%E5%8A%A0%E4%BF%A1%E4%BB%BB%E8%AF%81%E4%B9%A6.html&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>TeamViewer替代方案之OpenVPN</title><link>https://hankaibo.github.io/post/2019/2019-10-08/</link><pubDate>Tue, 08 Oct 2019 19:29:32 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-10-08/</guid><description>&lt;p>时隔多日，正好公司同事需要使用OpenVPN，我有点时间就研究安装试了试。&lt;/p>
-&lt;p>从网上搜索了下，文章一大堆，方式主要有三种，简单说明一下。&lt;/p>
-&lt;p>第一种，就是最传统的方式，手动更新依赖包，安装OpenVPN的各种依赖，手动配置证书等等；&lt;/p>
-&lt;p>第二种，有大神网友写了安装脚本，对方式一进行了封装，只要运行安装脚本即可；&lt;/p>
-&lt;p>第三种，与方式二相似，只不过是基于docker的环境，正好前段时间简单研究了下docker，并应用在自己的项目中，故使用它。&lt;/p>
-&lt;p>安装步骤参考官方说明，经过一番折腾，略为明白了，现记录如下：&lt;/p>
-&lt;h2 id="服务端配置">服务端配置：&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>定义临时变量&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="c1"># 这个变量是方便下面命令行引用，如果不定义，直接使用确定的路径也可以。临时的意思是，关闭终端后，这个变量就不在存在了。&lt;/span>
-&lt;span class="nv">OVPN_DATA&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;ovpn-data-example&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>初始化数据卷及运行openVPN容器&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="c1"># 创建数据卷，避免污染镜像&lt;/span>
-docker volume create --name &lt;span class="nv">$OVPN_DATA&lt;/span>
-&lt;span class="c1"># 拉取最新的镜像，并运行它为一个容器，VPN.SERVERNAME.COM 换成你的域名或者IP地址&lt;/span>
-docker run -v &lt;span class="nv">$OVPN_DATA&lt;/span>:/etc/openvpn --log-driver&lt;span class="o">=&lt;/span>none --rm kylemanna/openvpn ovpn_genconfig -u udp://VPN.SERVERNAME.COM
-&lt;span class="c1"># 配置秘钥，这里会有交互提示，输入密码、重复密码、证书名称、再次密码(这个密码是用来生成客户端秘钥文件时使用的，可以防止他人随意使用 openVPN 服务器端生成客户端秘钥。)&lt;/span>
-docker run -v &lt;span class="nv">$OVPN_DATA&lt;/span>:/etc/openvpn --log-driver&lt;span class="o">=&lt;/span>none --rm -it kylemanna/openvpn ovpn_initpki
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>启动OpenVPN服务端&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">docker run -v &lt;span class="nv">$OVPN_DATA&lt;/span>:/etc/openvpn -d -p 1194:1194/udp --cap-add&lt;span class="o">=&lt;/span>NET_ADMIN kylemanna/openvpn
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>生成客户端证书&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="c1"># CLIENTNAME 为要客户端名称，比如张三使用，就用 zhangsan 之类的标示一下。nopass 说明不需要密码，就是客户端连接时不里奇发密码。&lt;/span>
-&lt;span class="c1"># 如果上个步骤配置了生成密码，就输入上面的密码（使用上面步骤2配置的密码，才能生成客户端秘钥）。&lt;/span>
-docker run -v &lt;span class="nv">$OVPN_DATA&lt;/span>:/etc/openvpn --log-driver&lt;span class="o">=&lt;/span>none --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>导出客户端配置&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="c1"># CLIENTNAME.ovpn 就是要生成的客户端配置，下文客户端需要使用它。&lt;/span>
-docker run -v &lt;span class="nv">$OVPN_DATA&lt;/span>:/etc/openvpn --log-driver&lt;span class="o">=&lt;/span>none --rm kylemanna/openvpn ovpn_getclient CLIENTNAME &amp;gt; CLIENTNAME.ovpn
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;/ol>
-&lt;h2 id="客户端配置">客户端配置：&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>下载&lt;/p>
-&lt;p>从官网下载相应的客户端安装程序，网址&lt;a href="https://openvpn.net/community-downloads/">https://openvpn.net/community-downloads/&lt;/a> (可能需要科学上网)。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>安装&lt;/p>
-&lt;p>依 Windows 为例，就是下一步、下一步。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>安装秘钥&lt;/p>
-&lt;p>将服务端生成的 CLIENTNAME.ovpn 放到程序的安装目录config下，例如我的是 C:\Program Files\OpenVPN\config 目录。&lt;/p>
-&lt;p>或者运行之后，使用【导入配置文件&amp;hellip;】，将其导入。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>运行&lt;/p>
-&lt;p>启动客户端程序，选择连接即可。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;h2 id="参考">参考：&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;a href="https://github.com/kylemanna/docker-openvpn">https://github.com/kylemanna/docker-openvpn&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://www.dgstack.cn/archives/2498.html">https://www.dgstack.cn/archives/2498.html&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="http://blog.joylau.cn/2018/11/21/Docker-OpenVPN/">http://blog.joylau.cn/2018/11/21/Docker-OpenVPN/&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://neversec.top/20190515/openvqn.html#%E5%89%8D%E8%A8%80">https://neversec.top/20190515/openvqn.html#%E5%89%8D%E8%A8%80&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://zlxdike.github.io/2019/04/28/OpenVpn%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">https://zlxdike.github.io/2019/04/28/OpenVpn%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul></description></item><item><title>TeamViewer替代方案之frp</title><link>https://hankaibo.github.io/post/2019/2019-08-12/</link><pubDate>Mon, 12 Aug 2019 17:16:11 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-08-12/</guid><description>&lt;p>原因&lt;a href="https://hankaibo.github.io/post/2019/2019-08-07">前文&lt;/a>已述，不再多言。&lt;/p>
-&lt;p>frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。&lt;/p>
-&lt;p>正向代理，比如你想通过Google查点资料，结果被和谐了。这时呢，你下载了一款科学上网软件，装上它之后再连接Google，妥了。&lt;/p>
-&lt;p>背后原理是什么呢？&lt;/p>
-&lt;p>在这里科学上网充当了一个正向代理的角色，当你访问Google时，它把你浏览器的请求拿过来发到它在国外的服务器上，国外的服务器再向Google请求。
+对于我这种英文渣渣来说，母语太亲切了。&lt;/p&gt;
+&lt;p&gt;后来，鉴于其太重，决定选择新脚手架替换之，我又负责提供候选脚手架。选择范围当然是 github 了。其它标准如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;非服务端渲染&lt;/li&gt;
+&lt;li&gt;非 GraphQL&lt;/li&gt;
+&lt;li&gt;非 Umi&lt;/li&gt;
+&lt;li&gt;各 master 分支最后提交时间不晚于 2018-12-31&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基于以上标准，并主要按 Star 降序排列之后，有以下脚手架入选，先一一点评两句。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;脚手架&lt;/th&gt;
+&lt;th&gt;create-react-app&lt;/th&gt;
+&lt;th&gt;react-boilerplate&lt;/th&gt;
+&lt;th&gt;react-slingshot&lt;/th&gt;
+&lt;th&gt;react-pxq&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;网址&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/facebook/create-react-app&#34;&gt;create-react-app&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/react-boilerplate/react-boilerplate&#34;&gt;react-boilerplate&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/coryhouse/react-slingshot&#34;&gt;react-slingshot&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/bailicangdu/react-pxq&#34;&gt;react-pxq&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;语言&lt;/td&gt;
+&lt;td&gt;js、ts&lt;/td&gt;
+&lt;td&gt;js&lt;/td&gt;
+&lt;td&gt;js&lt;/td&gt;
+&lt;td&gt;js&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;路由&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;状态管理&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;样式&lt;/td&gt;
+&lt;td&gt;css&lt;/td&gt;
+&lt;td&gt;css&lt;/td&gt;
+&lt;td&gt;scss、css&lt;/td&gt;
+&lt;td&gt;less、css&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;国际化&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;代码检查&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;测试&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;工具&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;热部署&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Star&lt;/td&gt;
+&lt;td&gt;77.5k&lt;/td&gt;
+&lt;td&gt;25k&lt;/td&gt;
+&lt;td&gt;9.6k&lt;/td&gt;
+&lt;td&gt;6.7k&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Fork&lt;/td&gt;
+&lt;td&gt;18.6k&lt;/td&gt;
+&lt;td&gt;5.2k&lt;/td&gt;
+&lt;td&gt;1.7k&lt;/td&gt;
+&lt;td&gt;2.1k&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;时间&lt;/td&gt;
+&lt;td&gt;2020-04-07&lt;/td&gt;
+&lt;td&gt;2019-04-19&lt;/td&gt;
+&lt;td&gt;2020-03-30&lt;/td&gt;
+&lt;td&gt;2019-06-26&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;自由度&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;脚手架&lt;/th&gt;
+&lt;th&gt;react-admin&lt;/th&gt;
+&lt;th&gt;react&lt;/th&gt;
+&lt;th&gt;airframe-react&lt;/th&gt;
+&lt;th&gt;arc&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;网址&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/yezihaohao/react-admin&#34;&gt;react-admin&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/duxianwei520/react&#34;&gt;react&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/duxianwei520/react&#34;&gt;airframe-react&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/duxianwei520/react&#34;&gt;arc&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;语言&lt;/td&gt;
+&lt;td&gt;ts&lt;/td&gt;
+&lt;td&gt;js&lt;/td&gt;
+&lt;td&gt;js&lt;/td&gt;
+&lt;td&gt;js&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;路由&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;状态管理&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;样式&lt;/td&gt;
+&lt;td&gt;scss、css&lt;/td&gt;
+&lt;td&gt;less、css&lt;/td&gt;
+&lt;td&gt;scss、css&lt;/td&gt;
+&lt;td&gt;css&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;国际化&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;代码检查&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;测试&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;工具&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;热部署&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Star&lt;/td&gt;
+&lt;td&gt;4.8k&lt;/td&gt;
+&lt;td&gt;3.5k&lt;/td&gt;
+&lt;td&gt;2.7k&lt;/td&gt;
+&lt;td&gt;2.5k&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Fork&lt;/td&gt;
+&lt;td&gt;1.4k&lt;/td&gt;
+&lt;td&gt;1.3k&lt;/td&gt;
+&lt;td&gt;307&lt;/td&gt;
+&lt;td&gt;257&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;时间&lt;/td&gt;
+&lt;td&gt;2020-04-09&lt;/td&gt;
+&lt;td&gt;2020-01-16&lt;/td&gt;
+&lt;td&gt;2020-03-30&lt;/td&gt;
+&lt;td&gt;2019-08-30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;自由度&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;td&gt;较高&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;脚手架&lt;/th&gt;
+&lt;th&gt;react-webpack-babel&lt;/th&gt;
+&lt;th&gt;dva-boot-admin&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;网址&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/yezihaohao/react-admin&#34;&gt;react-webpack-babel&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/LANIF-UI/dva-boot-admin&#34;&gt;dva-boot-admin&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;语言&lt;/td&gt;
+&lt;td&gt;js&lt;/td&gt;
+&lt;td&gt;js&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;路由&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;状态管理&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;样式&lt;/td&gt;
+&lt;td&gt;scss、css&lt;/td&gt;
+&lt;td&gt;less、css&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;国际化&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;代码检查&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;测试&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;td&gt;Web API&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;工具&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;td&gt;webpack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;热部署&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;td&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Star&lt;/td&gt;
+&lt;td&gt;1.2k&lt;/td&gt;
+&lt;td&gt;1.2k&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Fork&lt;/td&gt;
+&lt;td&gt;433&lt;/td&gt;
+&lt;td&gt;346&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;时间&lt;/td&gt;
+&lt;td&gt;2020-01-26&lt;/td&gt;
+&lt;td&gt;2020-03-24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;自由度&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;td&gt;较高&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;create-react-app&lt;/strong&gt;，facebook 官方出品，极简到极致，啥都没有了。没有路由、没有状态管理，没有配置文件，纯 React ，真是一点不能再干净了。适合学习，如果有很强的webpack配置能力，可在其基础上自建；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;react-boilerplate&lt;/strong&gt;，集成了路由、状态管理(redux-saga)、国际化等功能，全套服务，可用于生产环境；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;react-slingshot&lt;/strong&gt;，集成了路由、状态管理，但状态管理使用 redux-thunk，据说没有 redux-saga 好用；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;react-pxq&lt;/strong&gt;，基本上就是 create-react-app + 作者的自定义，集成了路由、状态管理(redux-thunk)等常用功能；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;react-admin&lt;/strong&gt;，create-react-app的ts版本 + 作者的自定义，集成了路由、状态管理(redux-thunk)等，自定义页面较多；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;react&lt;/strong&gt;，作者手工打造，集成路由、状态管理(redux-thunk)等；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;airframe-react&lt;/strong&gt;，使用了一套bootstrap的ui，没有状态管理，类似于bootstrap的仪表盘管理演示，个人不喜欢；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;arc&lt;/strong&gt;，感觉就是一个create-react-app的示例加强版本，封装没有create-react-app 好，更新也比不了，选它不如直接选择 create-react-app；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;react-webpack-babel&lt;/strong&gt;，这真是一个入门配置，没有状态管理，不如create-react-app；&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;dva-boot-admin&lt;/strong&gt;，从名字上可以看出来，状态管理是dva（封装了redux-saga），作者又在上封装了一层（估计类似于umi了)，整体给我感觉就是create-react-app + dva(umi)，感觉可以快等于antdpro了。&lt;/p&gt;
+&lt;p&gt;综合来看，大部分脚手架都借鉴 create-react-app ，在其上做了自定义，但状态管理又没有使用redux-saga的强大。如果让我选择，我会直接选择react-boilerplate这款。虽然它更新还停留在去年4月份，但 dev 分支一直在保持更新。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Maven 配置 https 仓库</title>
+      <link>https://hankaibo.github.io/post/2019/2019-10-14/</link>
+      <pubDate>Mon, 14 Oct 2019 14:20:53 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-10-14/</guid>
+      
+        <description>&lt;p&gt;一直使用阿里的maven镜像，快。&lt;/p&gt;
+&lt;p&gt;上周才发现阿里更新了镜像的配置地址，兴冲冲地照原样抄袭了下来。&lt;/p&gt;
+&lt;p&gt;更新完之后才发现无法编译打包了，pom.xml 文件也提示有错误。报错信息类似这样：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;WARNING&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; Could not transfer metadata xxxxxxx from/to https://maven.aliyun.com/repository/public: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;面向 google 编程之后，才知道因为阿里云的 maven 仓库升级为 https 协议了，我们IDEA使用 maven 编译打包时，调用本机的 JDK ，JDK 发现阿里云 maven 地址的 https 证书不在它的证书库里。然后就报错了。&lt;/p&gt;
+&lt;p&gt;解决办法当然是把证书导入到 JDK 的证书库里去。&lt;/p&gt;
+&lt;p&gt;步骤如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id=&#34;下载阿里云-maven-的证书&#34;&gt;下载阿里云 maven 的证书&lt;/h2&gt;
+&lt;p&gt;下载证书很容易，我们只要用浏览器访问阿里云 maven 仓库的网址，就会发现地址栏最前面有一个绿色小锁子，打开小锁子，在里面就能找到证书，将其导出就可以啦。&lt;/p&gt;
+&lt;p&gt;推荐使用 firefox,chrome 浏览器，比 ie 查找证书方便多了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h2 id=&#34;导入阿里云的证书&#34;&gt;导入阿里云的证书&lt;/h2&gt;
+&lt;p&gt;如何导入呢？&lt;/p&gt;
+&lt;p&gt;JDK 的证书库是一个文件，目录可能如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;C:&lt;span class=&#34;se&#34;&gt;\P&lt;/span&gt;rogram Files&lt;span class=&#34;se&#34;&gt;\A&lt;/span&gt;doptOpenJDK&lt;span class=&#34;se&#34;&gt;\j&lt;/span&gt;dk-11.0.4.11-hotspot&lt;span class=&#34;se&#34;&gt;\l&lt;/span&gt;ib&lt;span class=&#34;se&#34;&gt;\s&lt;/span&gt;ecurity
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我使用的是AdoptOpenJDK，Oracle 的也一样。这个目录下的 cacerts 就是 JDK 的证书库。我们把下载的阿里云证书导入它里面就可以了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;keytool -import -alias 证书别名 -keystore 证书库 -file 阿里云证书 -trustcacerts -storepass changeit
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;证书别名，名称随意，最好能让人一眼明白这个证书的来源等，例如可以叫 aliyun.maven.cer；&lt;/p&gt;
+&lt;p&gt;证书库，这个就是我们 JDK 的cacerts了；&lt;/p&gt;
+&lt;p&gt;阿里云证书，就是我们刚才下载的证书；&lt;/p&gt;
+&lt;p&gt;changeit，是默认的密码，不用修改。&lt;/p&gt;
+&lt;p&gt;如果提示是否确认，输入 yes | y 就行。
+只要路径正确，证书就完成导入了。后面就可以开开心心地编译啦。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这种导入方式虽然简单，但缺点也同样明显。如果我们升级 JDK 版本之后，必须再来一遍；而且仅仅为了 maven 编译就导入一个证书有风险隐患，更科学合理的方式就是使用 maven 的自定义证书库，这个我下次学会了再分享。😅&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.playpi.org/2018082501.html&#34;&gt;https://www.playpi.org/2018082501.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kael-aiur.com/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/maven%E6%B7%BB%E5%8A%A0%E4%BF%A1%E4%BB%BB%E8%AF%81%E4%B9%A6.html&#34;&gt;http://kael-aiur.com/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/maven%E6%B7%BB%E5%8A%A0%E4%BF%A1%E4%BB%BB%E8%AF%81%E4%B9%A6.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>TeamViewer替代方案之OpenVPN</title>
+      <link>https://hankaibo.github.io/post/2019/2019-10-08/</link>
+      <pubDate>Tue, 08 Oct 2019 19:29:32 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-10-08/</guid>
+      
+        <description>&lt;p&gt;时隔多日，正好公司同事需要使用OpenVPN，我有点时间就研究安装试了试。&lt;/p&gt;
+&lt;p&gt;从网上搜索了下，文章一大堆，方式主要有三种，简单说明一下。&lt;/p&gt;
+&lt;p&gt;第一种，就是最传统的方式，手动更新依赖包，安装OpenVPN的各种依赖，手动配置证书等等；&lt;/p&gt;
+&lt;p&gt;第二种，有大神网友写了安装脚本，对方式一进行了封装，只要运行安装脚本即可；&lt;/p&gt;
+&lt;p&gt;第三种，与方式二相似，只不过是基于docker的环境，正好前段时间简单研究了下docker，并应用在自己的项目中，故使用它。&lt;/p&gt;
+&lt;p&gt;安装步骤参考官方说明，经过一番折腾，略为明白了，现记录如下：&lt;/p&gt;
+&lt;h2 id=&#34;服务端配置&#34;&gt;服务端配置：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义临时变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 这个变量是方便下面命令行引用，如果不定义，直接使用确定的路径也可以。临时的意思是，关闭终端后，这个变量就不在存在了。&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;OVPN_DATA&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ovpn-data-example&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;初始化数据卷及运行openVPN容器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建数据卷，避免污染镜像&lt;/span&gt;
+docker volume create --name &lt;span class=&#34;nv&#34;&gt;$OVPN_DATA&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 拉取最新的镜像，并运行它为一个容器，VPN.SERVERNAME.COM 换成你的域名或者IP地址&lt;/span&gt;
+docker run -v &lt;span class=&#34;nv&#34;&gt;$OVPN_DATA&lt;/span&gt;:/etc/openvpn --log-driver&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;none --rm kylemanna/openvpn ovpn_genconfig -u udp://VPN.SERVERNAME.COM
+&lt;span class=&#34;c1&#34;&gt;# 配置秘钥，这里会有交互提示，输入密码、重复密码、证书名称、再次密码(这个密码是用来生成客户端秘钥文件时使用的，可以防止他人随意使用 openVPN 服务器端生成客户端秘钥。)&lt;/span&gt;
+docker run -v &lt;span class=&#34;nv&#34;&gt;$OVPN_DATA&lt;/span&gt;:/etc/openvpn --log-driver&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;none --rm -it kylemanna/openvpn ovpn_initpki
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;启动OpenVPN服务端&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;docker run -v &lt;span class=&#34;nv&#34;&gt;$OVPN_DATA&lt;/span&gt;:/etc/openvpn -d -p 1194:1194/udp --cap-add&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;NET_ADMIN kylemanna/openvpn
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生成客户端证书&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# CLIENTNAME 为要客户端名称，比如张三使用，就用 zhangsan 之类的标示一下。nopass 说明不需要密码，就是客户端连接时不里奇发密码。&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 如果上个步骤配置了生成密码，就输入上面的密码（使用上面步骤2配置的密码，才能生成客户端秘钥）。&lt;/span&gt;
+docker run -v &lt;span class=&#34;nv&#34;&gt;$OVPN_DATA&lt;/span&gt;:/etc/openvpn --log-driver&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;none --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导出客户端配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# CLIENTNAME.ovpn 就是要生成的客户端配置，下文客户端需要使用它。&lt;/span&gt;
+docker run -v &lt;span class=&#34;nv&#34;&gt;$OVPN_DATA&lt;/span&gt;:/etc/openvpn --log-driver&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;none --rm kylemanna/openvpn ovpn_getclient CLIENTNAME &amp;gt; CLIENTNAME.ovpn
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;客户端配置&#34;&gt;客户端配置：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载&lt;/p&gt;
+&lt;p&gt;从官网下载相应的客户端安装程序，网址&lt;a href=&#34;https://openvpn.net/community-downloads/&#34;&gt;https://openvpn.net/community-downloads/&lt;/a&gt; (可能需要科学上网)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装&lt;/p&gt;
+&lt;p&gt;依 Windows 为例，就是下一步、下一步。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装秘钥&lt;/p&gt;
+&lt;p&gt;将服务端生成的 CLIENTNAME.ovpn 放到程序的安装目录config下，例如我的是 C:\Program Files\OpenVPN\config 目录。&lt;/p&gt;
+&lt;p&gt;或者运行之后，使用【导入配置文件&amp;hellip;】，将其导入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行&lt;/p&gt;
+&lt;p&gt;启动客户端程序，选择连接即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kylemanna/docker-openvpn&#34;&gt;https://github.com/kylemanna/docker-openvpn&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dgstack.cn/archives/2498.html&#34;&gt;https://www.dgstack.cn/archives/2498.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.joylau.cn/2018/11/21/Docker-OpenVPN/&#34;&gt;http://blog.joylau.cn/2018/11/21/Docker-OpenVPN/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://neversec.top/20190515/openvqn.html#%E5%89%8D%E8%A8%80&#34;&gt;https://neversec.top/20190515/openvqn.html#%E5%89%8D%E8%A8%80&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://zlxdike.github.io/2019/04/28/OpenVpn%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/&#34;&gt;https://zlxdike.github.io/2019/04/28/OpenVpn%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>TeamViewer替代方案之frp</title>
+      <link>https://hankaibo.github.io/post/2019/2019-08-12/</link>
+      <pubDate>Mon, 12 Aug 2019 17:16:11 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-08-12/</guid>
+      
+        <description>&lt;p&gt;原因&lt;a href=&#34;https://hankaibo.github.io/post/2019/2019-08-07&#34;&gt;前文&lt;/a&gt;已述，不再多言。&lt;/p&gt;
+&lt;p&gt;frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。&lt;/p&gt;
+&lt;p&gt;正向代理，比如你想通过Google查点资料，结果被和谐了。这时呢，你下载了一款科学上网软件，装上它之后再连接Google，妥了。&lt;/p&gt;
+&lt;p&gt;背后原理是什么呢？&lt;/p&gt;
+&lt;p&gt;在这里科学上网充当了一个正向代理的角色，当你访问Google时，它把你浏览器的请求拿过来发到它在国外的服务器上，国外的服务器再向Google请求。
 因为国外没有墙，自然能访问Google了。得到Google的回复后再转给你。对于Google来说，它认为是那个服务器访问的它。
-服务器就是正向代理，正向代理隐藏了真实的客户端（你）。&lt;/p>
-&lt;p>反向代理，与此相反。&lt;/p>
-&lt;p>当你在北京访问 &lt;a href="http://www.baidu.com">www.baidu.com&lt;/a> 服务器 nginx 时，nginx 指派北京的服务器把你要的内容返还给你，因为北京这台服务器离你近，反应快；
-当你在广州时，nginx 指派广州的服务器把内容返回给你，因为此时它发现广州的服务器离你近，反应快。&lt;/p>
-&lt;p>但是对于你来说，这一切都是透明的。你一直认为自己访问的就是 baidu，到底是那台服务器响应你的，你根本不关心。在这里 nginx 就是反向代理，
-反向代理隐藏真实服务端。&lt;/p>
-&lt;p>我们安装的 frp 就是一个类似 nginx 的反向代理，你通过远程桌面连接它，它就指派公司电脑响应你。实现了远程办公的功能。&lt;/p>
-&lt;p>前提条件：&lt;/p>
-&lt;ol>
-&lt;li>一个公网服务器（阿里云、腾讯云、华为云……）；&lt;/li>
-&lt;li>公司电脑一台；&lt;/li>
-&lt;li>家里电脑一台。&lt;/li>
-&lt;/ol>
-&lt;h2 id="配置服务端-frps">配置服务端 frps：&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>下载&lt;/p>
-&lt;p>安装包地址&lt;a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases&lt;/a>，选择适合服务器的版本；&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>解压&lt;/p>
-&lt;p>解压之后可以看到一些frps为前缀的文件，这些是服务端(server)使用的；frpc前缀的文件是客户端(client)使用的。&lt;/p>
-&lt;p>frps_full.ini是示例文件，供我们参考。我们主要编辑frps.ini文件。&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="c1"># 配置开始设置&lt;/span>
-&lt;span class="o">[&lt;/span>common&lt;span class="o">]&lt;/span>
-&lt;span class="c1"># frp 服务端端口（必须）&lt;/span>
-&lt;span class="nv">bind_port&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">7000&lt;/span>
-&lt;span class="c1"># frp 服务端token（必须）&lt;/span>
-&lt;span class="nv">token&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">12345678&lt;/span>
-&lt;span class="c1"># 仪表盘端口、用户名、密码（方便后台查看连接情况）&lt;/span>
-&lt;span class="nv">dashboard_port&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">7500&lt;/span>
-&lt;span class="nv">dashboard_user&lt;/span> &lt;span class="o">=&lt;/span> admin
-&lt;span class="nv">dabshboard_pwd&lt;/span> &lt;span class="o">=&lt;/span> admin
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>启动&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">frps -c frps.ini
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>这时就可以访问仪表盘查看连接情况等信息。例如 &lt;a href="http://xxx.xxx.xxx.xxx">http://xxx.xxx.xxx.xxx&lt;/a>:7500 ，输入用户名/密码（admin/admin）就 OK 了。&lt;/p>
-&lt;p>为了保证关闭终端后它依然工作需要使用nohup命令，例如：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">nohup frps -c frps.ini
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;/ol>
-&lt;h2 id="配置客户端-frpc">配置客户端 frpc：&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>打开frpc.ini，配置如下：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="c1"># 配置开始&lt;/span>
-&lt;span class="o">[&lt;/span>common&lt;span class="o">]&lt;/span>
-&lt;span class="c1"># 你的服务器ip地址或者域名（就是上面配置服务端所在机器的地址）&lt;/span>
-&lt;span class="nv">server_addr&lt;/span> &lt;span class="o">=&lt;/span> 0.0.0.0
-&lt;span class="c1"># 服务器端口，默认为7000（与上面服务端配置保持相同）&lt;/span>
-&lt;span class="nv">server_port&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">7000&lt;/span>
-&lt;span class="c1"># 类似于密码（与上面服务端配置保持相同）&lt;/span>
-&lt;span class="nv">token&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">12345678&lt;/span>
-&lt;span class="c1"># 远程桌面连接的名字，随意命名&lt;/span>
-&lt;span class="o">[&lt;/span>rdp&lt;span class="o">]&lt;/span>
-&lt;span class="c1"># 远程连接使用的协议&lt;/span>
-&lt;span class="nb">type&lt;/span> &lt;span class="o">=&lt;/span> tcp
-&lt;span class="c1"># 本地ip，填你需要转发到的目的ip&lt;/span>
-&lt;span class="c1"># 如果是转发到frp客户端所在本机则填 127.0.0.1&lt;/span>
-&lt;span class="c1"># 否则填对应机器的内网ip&lt;/span>
-&lt;span class="nv">local_ip&lt;/span> &lt;span class="o">=&lt;/span> 127.0.0.1
-&lt;span class="c1"># 远程桌面连接使用的端口&lt;/span>
-&lt;span class="nv">local_port&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">3389&lt;/span>
-&lt;span class="c1"># frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问&lt;/span>
-&lt;span class="c1"># 客户端的 local_port，如果填0则会随机分配一个端口&lt;/span>
-&lt;span class="nv">remote_port&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">7001&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>运行，使用 cmd 或者 PowerShell 进入目录，执行&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">frpc.exe -c frpc.ini
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>这样当在家用使用 mstsc 访问 xxx.xxx.xxx.xxx:7001 时，服务器就会指定这个客户端响应，也就是我们远程连接到公司电脑上了。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>开机自启，编写批处理脚本frp.bat：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-shell" data-lang="shell">@echo off
-&lt;span class="k">if&lt;/span> &lt;span class="s2">&amp;#34;%1&amp;#34;&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;h&amp;#34;&lt;/span> goto begin
-mshta vbscript:createobject&lt;span class="o">(&lt;/span>&lt;span class="s2">&amp;#34;wscript.shell&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span>.run&lt;span class="o">(&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;%~nx0&amp;#34;&amp;#34; h&amp;#34;&lt;/span>,0&lt;span class="o">)(&lt;/span>window.close&lt;span class="o">)&amp;amp;&amp;amp;&lt;/span>&lt;span class="nb">exit&lt;/span>
+服务器就是正向代理，正向代理隐藏了真实的客户端（你）。&lt;/p&gt;
+&lt;p&gt;反向代理，与此相反。&lt;/p&gt;
+&lt;p&gt;当你在北京访问 &lt;a href=&#34;http://www.baidu.com&#34;&gt;www.baidu.com&lt;/a&gt; 服务器 nginx 时，nginx 指派北京的服务器把你要的内容返还给你，因为北京这台服务器离你近，反应快；
+当你在广州时，nginx 指派广州的服务器把内容返回给你，因为此时它发现广州的服务器离你近，反应快。&lt;/p&gt;
+&lt;p&gt;但是对于你来说，这一切都是透明的。你一直认为自己访问的就是 baidu，到底是那台服务器响应你的，你根本不关心。在这里 nginx 就是反向代理，
+反向代理隐藏真实服务端。&lt;/p&gt;
+&lt;p&gt;我们安装的 frp 就是一个类似 nginx 的反向代理，你通过远程桌面连接它，它就指派公司电脑响应你。实现了远程办公的功能。&lt;/p&gt;
+&lt;p&gt;前提条件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一个公网服务器（阿里云、腾讯云、华为云……）；&lt;/li&gt;
+&lt;li&gt;公司电脑一台；&lt;/li&gt;
+&lt;li&gt;家里电脑一台。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;配置服务端-frps&#34;&gt;配置服务端 frps：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载&lt;/p&gt;
+&lt;p&gt;安装包地址&lt;a href=&#34;https://github.com/fatedier/frp/releases&#34;&gt;https://github.com/fatedier/frp/releases&lt;/a&gt;，选择适合服务器的版本；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压&lt;/p&gt;
+&lt;p&gt;解压之后可以看到一些frps为前缀的文件，这些是服务端(server)使用的；frpc前缀的文件是客户端(client)使用的。&lt;/p&gt;
+&lt;p&gt;frps_full.ini是示例文件，供我们参考。我们主要编辑frps.ini文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 配置开始设置&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;common&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# frp 服务端端口（必须）&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;bind_port&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;7000&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# frp 服务端token（必须）&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;token&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;12345678&lt;/span&gt;
+   
+&lt;span class=&#34;c1&#34;&gt;# 仪表盘端口、用户名、密码（方便后台查看连接情况）&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;dashboard_port&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;7500&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;dashboard_user&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; admin
+&lt;span class=&#34;nv&#34;&gt;dabshboard_pwd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; admin
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;启动&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;frps -c frps.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这时就可以访问仪表盘查看连接情况等信息。例如 &lt;a href=&#34;http://xxx.xxx.xxx.xxx&#34;&gt;http://xxx.xxx.xxx.xxx&lt;/a&gt;:7500 ，输入用户名/密码（admin/admin）就 OK 了。&lt;/p&gt;
+&lt;p&gt;为了保证关闭终端后它依然工作需要使用nohup命令，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;nohup frps -c frps.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;配置客户端-frpc&#34;&gt;配置客户端 frpc：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载安装包到公司电脑上任意目录，比如我放到 D:\tools\frp_0.28.0_windows_amd64.zip。解压。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开frpc.ini，配置如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 配置开始&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;common&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 你的服务器ip地址或者域名（就是上面配置服务端所在机器的地址）&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;server_addr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 0.0.0.0
+&lt;span class=&#34;c1&#34;&gt;# 服务器端口，默认为7000（与上面服务端配置保持相同）&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;server_port&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;7000&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 类似于密码（与上面服务端配置保持相同）&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;token&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;12345678&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 远程桌面连接的名字，随意命名&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;rdp&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; 
+&lt;span class=&#34;c1&#34;&gt;# 远程连接使用的协议&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; tcp 
+&lt;span class=&#34;c1&#34;&gt;# 本地ip，填你需要转发到的目的ip&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 如果是转发到frp客户端所在本机则填 127.0.0.1&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 否则填对应机器的内网ip&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;local_ip&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 127.0.0.1
+&lt;span class=&#34;c1&#34;&gt;# 远程桌面连接使用的端口&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;local_port&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;3389&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# frp 服务端的远程监听端口，即你访问服务端的 remote_port 就相当于访问&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 客户端的 local_port，如果填0则会随机分配一个端口&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;remote_port&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;7001&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行，使用 cmd 或者 PowerShell 进入目录，执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;frpc.exe -c frpc.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样当在家用使用 mstsc 访问 xxx.xxx.xxx.xxx:7001 时，服务器就会指定这个客户端响应，也就是我们远程连接到公司电脑上了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开机自启，编写批处理脚本frp.bat：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;@echo off
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%1&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;h&amp;#34;&lt;/span&gt; goto begin
+mshta vbscript:createobject&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;wscript.shell&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;.run&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&amp;#34;%~nx0&amp;#34;&amp;#34; h&amp;#34;&lt;/span&gt;,0&lt;span class=&#34;o&#34;&gt;)(&lt;/span&gt;window.close&lt;span class=&#34;o&#34;&gt;)&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
 :begin
 REM
-&lt;span class="nb">cd&lt;/span> 你的目录
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; 你的目录
 frpc -c frpc.ini
-&lt;span class="nb">exit&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;/ol>
-&lt;p>生成bat的快捷方式，并放在启动目录下&lt;/p>
-&lt;p>所有用户目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp&lt;/p>
-&lt;p>或者当前用户：C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&lt;/p>
-&lt;p>即可开机自启。&lt;/p></description></item><item><title>Windows 10家庭版启用远程桌面连接</title><link>https://hankaibo.github.io/post/2019/2019-08-07/</link><pubDate>Wed, 07 Aug 2019 20:52:35 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-08-07/</guid><description>&lt;p>一直没怎么用过Windows自带的远程桌面功能，最近经常需要在家远程连接公司电脑办公，但以前使用正常的TeamViewer突然抽风不能用了。&lt;/p>
-&lt;p>即使同事给我使用了破解版本，也很快又出现了问题，可能是我打开的姿势不对吧！&lt;/p>
-&lt;p>考虑到国人的尿性，直接决定使用国外软件（感觉自己有点崇洋媚外😗），查找了一晚上，最后找到两种办法。&lt;/p>
-&lt;p>一，使用frp搭建反向代理服务器，家里电脑使用远程桌面连接外网代理服务器(安装服务端)，代理服务器自动转接到公司内网电脑(安装客户端)，具体请看&lt;a href="https://hankaibo.github.io/post/2019/2019-08-12/">此文&lt;/a>。&lt;/p>
-&lt;p>二，使用OpenVPN搭建服务器，公司和家里电脑安装客户端，组建一个虚拟局域网络，然后使用远程桌面连接。&lt;/p>
-&lt;p>以上两种实现方式，都要借助系统自带的远程桌面连接功能，兴冲冲去启用该功能时发现自己是家庭版本。泪奔。&lt;/p>
-&lt;p>问谷歌，只需借助一个小玩意即可实现。即&lt;a href="https://github.com/stascorp/rdpwrap">RDP Wrapper Library&lt;/a>。&lt;/p>
-&lt;p>使用如下：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>下载最新版本：&lt;a href="https://github.com/stascorp/rdpwrap/releases">https://github.com/stascorp/rdpwrap/releases&lt;/a>；&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>解压之后安装：运行 install.bat 批处理文件；&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>配置启用远程连接功能：运行 RDPConf.exe ，如果 Diagnostics 出现&lt;!-- raw HTML omitted -->not listening [not supported]&lt;!-- raw HTML omitted -->，说明不支持你的版本，继续看下文；&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>在网上找 rdpwrap.ini 的最新文件，下载之后替换掉 C:\Program Files\RDP Wrapper 目录下的同名文件。
-比如这个 issue 里就有 &lt;a href="https://github.com/stascorp/rdpwrap/pull/816">https://github.com/stascorp/rdpwrap/pull/816&lt;/a>；&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>重新执行步骤3，全绿，表示通过；&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>运行 RDPCheck.exe，连接电脑测试。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>注：如果一切正常的情况下依然不能连接可以尝试设置用户名/密码，无密码可能会出问题。&lt;/strong>&lt;/p></description></item><item><title>前端路由</title><link>https://hankaibo.github.io/post/2019/2019-04-08/</link><pubDate>Mon, 08 Apr 2019 16:02:31 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-04-08/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
-&lt;p>说起前端路由，就不得再问一句有后台路由吗？
+&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;生成bat的快捷方式，并放在启动目录下&lt;/p&gt;
+&lt;p&gt;所有用户目录：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp&lt;/p&gt;
+&lt;p&gt;或者当前用户：C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&lt;/p&gt;
+&lt;p&gt;即可开机自启。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Windows 10家庭版启用远程桌面连接</title>
+      <link>https://hankaibo.github.io/post/2019/2019-08-07/</link>
+      <pubDate>Wed, 07 Aug 2019 20:52:35 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-08-07/</guid>
+      
+        <description>&lt;p&gt;一直没怎么用过Windows自带的远程桌面功能，最近经常需要在家远程连接公司电脑办公，但以前使用正常的TeamViewer突然抽风不能用了。&lt;/p&gt;
+&lt;p&gt;即使同事给我使用了破解版本，也很快又出现了问题，可能是我打开的姿势不对吧！&lt;/p&gt;
+&lt;p&gt;考虑到国人的尿性，直接决定使用国外软件（感觉自己有点崇洋媚外😗），查找了一晚上，最后找到两种办法。&lt;/p&gt;
+&lt;p&gt;一，使用frp搭建反向代理服务器，家里电脑使用远程桌面连接外网代理服务器(安装服务端)，代理服务器自动转接到公司内网电脑(安装客户端)，具体请看&lt;a href=&#34;https://hankaibo.github.io/post/2019/2019-08-12/&#34;&gt;此文&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;二，使用OpenVPN搭建服务器，公司和家里电脑安装客户端，组建一个虚拟局域网络，然后使用远程桌面连接。&lt;/p&gt;
+&lt;p&gt;以上两种实现方式，都要借助系统自带的远程桌面连接功能，兴冲冲去启用该功能时发现自己是家庭版本。泪奔。&lt;/p&gt;
+&lt;p&gt;问谷歌，只需借助一个小玩意即可实现。即&lt;a href=&#34;https://github.com/stascorp/rdpwrap&#34;&gt;RDP Wrapper Library&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;使用如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载最新版本：&lt;a href=&#34;https://github.com/stascorp/rdpwrap/releases&#34;&gt;https://github.com/stascorp/rdpwrap/releases&lt;/a&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压之后安装：运行 install.bat 批处理文件；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置启用远程连接功能：运行 RDPConf.exe ，如果 Diagnostics 出现&lt;!-- raw HTML omitted --&gt;not listening [not supported]&lt;!-- raw HTML omitted --&gt;，说明不支持你的版本，继续看下文；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在网上找 rdpwrap.ini 的最新文件，下载之后替换掉 C:\Program Files\RDP Wrapper 目录下的同名文件。
+比如这个 issue 里就有 &lt;a href=&#34;https://github.com/stascorp/rdpwrap/pull/816&#34;&gt;https://github.com/stascorp/rdpwrap/pull/816&lt;/a&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重新执行步骤3，全绿，表示通过；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行 RDPCheck.exe，连接电脑测试。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注：如果一切正常的情况下依然不能连接可以尝试设置用户名/密码，无密码可能会出问题。&lt;/strong&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>前端路由</title>
+      <link>https://hankaibo.github.io/post/2019/2019-04-08/</link>
+      <pubDate>Mon, 08 Apr 2019 16:02:31 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-04-08/</guid>
+      
+        <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;说起前端路由，就不得再问一句有后台路由吗？
 其实一开始是没有前端路由这个概念的，路由全部由后台服务器实现与控制。
-当我们在浏览器地址栏中输入一个URL时，浏览器将其发送到后台服务器，服务器解析出地址并根据相关配置拼接成html返回给浏览器渲染。&lt;/p>
-&lt;p>我们以常用的Spring MVC为例，后台服务器配置片段如下:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">class=&lt;/span>&lt;span class="s">&amp;#34;org.springframework.web.servlet.view.InternalResourceViewResolver&amp;#34;&lt;/span>
-&lt;span class="na">p:viewClass=&lt;/span>&lt;span class="s">&amp;#34;org.springframework.web.servlet.view.JstlView&amp;#34;&lt;/span>
-&lt;span class="na">p:prefix=&lt;/span>&lt;span class="s">&amp;#34;/WEB-INF/jsp/&amp;#34;&lt;/span> &lt;span class="na">p:suffix=&lt;/span>&lt;span class="s">&amp;#34;.jsp&amp;#34;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>上面我们配置了页面前缀prefix为“/WEB-INF/jsp/”，后缀suffix为“.jsp”。
+当我们在浏览器地址栏中输入一个URL时，浏览器将其发送到后台服务器，服务器解析出地址并根据相关配置拼接成html返回给浏览器渲染。&lt;/p&gt;
+&lt;p&gt;我们以常用的Spring MVC为例，后台服务器配置片段如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;org.springframework.web.servlet.view.InternalResourceViewResolver&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;p:viewClass=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;org.springframework.web.servlet.view.JstlView&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;p:prefix=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/WEB-INF/jsp/&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;p:suffix=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;.jsp&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;上面我们配置了页面前缀prefix为“/WEB-INF/jsp/”，后缀suffix为“.jsp”。
 当我们访问“http://localhost:8000/users/toList”时，
-后台将分解出“/users/toList”路径，并找到相关的Controller处理。&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="nd">@Controller&lt;/span>
-&lt;span class="nd">@RequestMapping&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;/users&amp;#34;&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="c1">//所有&amp;#34;/users&amp;#34;开头的url都被这个类处理。
-&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">BaseUserController&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="c1">// &amp;#34;/users/toList&amp;#34;被这个方法处理。
-&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nd">@RequestMapping&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;/toList&amp;#34;&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">method&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">RequestMethod&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">GET&lt;/span>&lt;span class="o">)&lt;/span>
-&lt;span class="kd">public&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="nf">toList&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;span class="k">return&lt;/span> &lt;span class="s">&amp;#34;user/list&amp;#34;&lt;/span>&lt;span class="o">;&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;span class="o">...&lt;/span>
-&lt;span class="o">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>此方法返回字符串“user/list”，再加上我们的前后缀prefix与suffix，即可得到“/WEB-INF/jsp/user/list.jsp”为我们返回给前端的页面。&lt;/p>
-&lt;p>页面目录结构如下：&lt;/p>
-&lt;p>&lt;img src="https://hankaibo.github.io/img/user_list.jpg" alt="用户列表" title="用户列表">&lt;/p>
-&lt;p>按照返回的“/WEB-INF/jsp/user/list.jsp”，从上图中依次找到相应的页面给前端就完成了后台路由的处理。&lt;/p>
-&lt;p>通过上面的示例，我们了解了后台路由的处理流程。&lt;/p>
-&lt;p>为什么会出现前端路由呢？&lt;/p>
-&lt;p>从上面的流程中，我们不难发现，不同的url对应着不同的页面，当我们切换url时，浏览器会切换对应的页面，它是整体替换的。页面会出现闪烁刷新，导致用户体验不够好。
+后台将分解出“/users/toList”路径，并找到相关的Controller处理。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Controller&lt;/span&gt;
+&lt;span class=&#34;nd&#34;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/users&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;//所有&amp;#34;/users&amp;#34;开头的url都被这个类处理。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;BaseUserController&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;// &amp;#34;/users/toList&amp;#34;被这个方法处理。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nd&#34;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/toList&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;method&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RequestMethod&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;GET&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;  
+    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;toList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;user/list&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此方法返回字符串“user/list”，再加上我们的前后缀prefix与suffix，即可得到“/WEB-INF/jsp/user/list.jsp”为我们返回给前端的页面。&lt;/p&gt;
+&lt;p&gt;页面目录结构如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hankaibo.github.io/img/user_list.jpg&#34; alt=&#34;用户列表&#34; title=&#34;用户列表&#34;&gt;&lt;/p&gt;
+&lt;p&gt;按照返回的“/WEB-INF/jsp/user/list.jsp”，从上图中依次找到相应的页面给前端就完成了后台路由的处理。&lt;/p&gt;
+&lt;p&gt;通过上面的示例，我们了解了后台路由的处理流程。&lt;/p&gt;
+&lt;p&gt;为什么会出现前端路由呢？&lt;/p&gt;
+&lt;p&gt;从上面的流程中，我们不难发现，不同的url对应着不同的页面，当我们切换url时，浏览器会切换对应的页面，它是整体替换的。页面会出现闪烁刷新，导致用户体验不够好。
 Google将Ajax发扬光大后，异步的局部刷新流行开来，但Ajax的无浏览历史记录导致浏览器的前进后退处理比较麻烦，这种情况下，用前端路由就可以很好的解决。
-再加上单页面应用与MVVM的发展，前端路由逐渐成熟与流行起来。&lt;/p>
-&lt;h2 id="实现">实现&lt;/h2>
-&lt;p>要实现前端路由，就要解决两个问题：&lt;/p>
-&lt;ol>
-&lt;li>在页面不刷新的前提下实现url变化&lt;/li>
-&lt;li>捕捉到url的变化，以便执行页面替换逻辑&lt;/li>
-&lt;/ol>
-&lt;p>这两个问题都可以通过如下技术解决。一种是基于URL的frag(片段)技术，以“#”为标示，一种是基于HTML 5的History API。即：&lt;/p>
-&lt;ul>
-&lt;li>location.hash+hashchange事件&lt;/li>
-&lt;li>history.pushState()+popState事件&lt;/li>
-&lt;/ul>
-&lt;h3 id="hash方式">hash方式&lt;/h3>
-&lt;p>根据URL协议我们知道，服务器通常只处理整个对象，而不处理片段，浏览器不能将片段传送给服务器。浏览器从服务器获取整个资源之后，会根据片段来显示指定的资源。&lt;/p>
-&lt;ol>
-&lt;li>当我们访问“http://localhost:8000/”时，我们首先打开了默认的index.html页面；
-然后我们被重定向到一个新地址，比如：“http://localhost:8000/#/index”；&lt;/li>
-&lt;li>当我们访问用户列表时，通过页面location.hash事件触发，我们的URL变成“http://localhost:8000/#/users/list”，根据URL协议，#之后的内容不会发送给服务器，
-对后台来说URL未变不需要它实现路由了，我们通过hashchange事件监听url变化，发送ajax请求向后台请求数据局部刷新页面，实现了页面的正确加载显示。&lt;/li>
-&lt;li>当我们访问其它页面时，比如部门列表时，就变成了“http://localhost:8000/#/depts/list”，同理。&lt;/li>
-&lt;/ol>
-&lt;p>通过上面的分析，我们实现了路由控制从后台向前端的转移，并同样完成了页面的正确加载显示。&lt;/p>
-&lt;h3 id="history方式">history方式&lt;/h3>
-&lt;p>这是HTML 5新增的方式，它可以在不刷新页面的前提下动态改变浏览器地址栏中的URL地址，动态修改页面上所显示资源。&lt;/p>
-&lt;ol>
-&lt;li>当我们访问“http://localhost:8000/”时，我们首先打开了默认的index.html页面；然后我们被重定向到一个新地址，
-比如：“http://localhost:8000/index”；&lt;/li>
-&lt;li>当我们访问用户列表时，通过页面history.pushState()事件触发，我们的URL变成“http://localhost:8000/users/list”，根据history API的实现，我们会修改地址栏的地址，但不会
-向后台发送请求，再通过popState事件监听到了url的变化，发送ajax请求向后台请求数据之后局部刷新页面。&lt;/li>
-&lt;li>当我们访问其它页面时，也是同样的原理。&lt;/li>
-&lt;/ol>
-&lt;p>这两种方式的优缺点网上有很多，我就不再啰嗦了。&lt;/p>
-&lt;h2 id="404问题">404问题&lt;/h2>
-&lt;p>前后端分离的单页应用，我们使用history方式，开开心心地build完代码扔给后台部署之后一切正常。但测试人员反应，一旦刷新，就会报404的错误。
-比如，我们在页面“http://localhost:8000/users/list”F5刷新时，就报了404错误。但我们本地开发一切正常啊？&lt;/p>
-&lt;p>这是怎么会事呢？&lt;/p>
-&lt;p>因为使用history模式的路由中，路由是虚拟的，后台并不存在相应的物理路径和文件。
+再加上单页面应用与MVVM的发展，前端路由逐渐成熟与流行起来。&lt;/p&gt;
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;p&gt;要实现前端路由，就要解决两个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在页面不刷新的前提下实现url变化&lt;/li&gt;
+&lt;li&gt;捕捉到url的变化，以便执行页面替换逻辑&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这两个问题都可以通过如下技术解决。一种是基于URL的frag(片段)技术，以“#”为标示，一种是基于HTML 5的History API。即：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;location.hash+hashchange事件&lt;/li&gt;
+&lt;li&gt;history.pushState()+popState事件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hash方式&#34;&gt;hash方式&lt;/h3&gt;
+&lt;p&gt;根据URL协议我们知道，服务器通常只处理整个对象，而不处理片段，浏览器不能将片段传送给服务器。浏览器从服务器获取整个资源之后，会根据片段来显示指定的资源。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当我们访问“http://localhost:8000/”时，我们首先打开了默认的index.html页面；
+然后我们被重定向到一个新地址，比如：“http://localhost:8000/#/index”；&lt;/li&gt;
+&lt;li&gt;当我们访问用户列表时，通过页面location.hash事件触发，我们的URL变成“http://localhost:8000/#/users/list”，根据URL协议，#之后的内容不会发送给服务器，
+对后台来说URL未变不需要它实现路由了，我们通过hashchange事件监听url变化，发送ajax请求向后台请求数据局部刷新页面，实现了页面的正确加载显示。&lt;/li&gt;
+&lt;li&gt;当我们访问其它页面时，比如部门列表时，就变成了“http://localhost:8000/#/depts/list”，同理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过上面的分析，我们实现了路由控制从后台向前端的转移，并同样完成了页面的正确加载显示。&lt;/p&gt;
+&lt;h3 id=&#34;history方式&#34;&gt;history方式&lt;/h3&gt;
+&lt;p&gt;这是HTML 5新增的方式，它可以在不刷新页面的前提下动态改变浏览器地址栏中的URL地址，动态修改页面上所显示资源。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当我们访问“http://localhost:8000/”时，我们首先打开了默认的index.html页面；然后我们被重定向到一个新地址，
+比如：“http://localhost:8000/index”；&lt;/li&gt;
+&lt;li&gt;当我们访问用户列表时，通过页面history.pushState()事件触发，我们的URL变成“http://localhost:8000/users/list”，根据history API的实现，我们会修改地址栏的地址，但不会
+向后台发送请求，再通过popState事件监听到了url的变化，发送ajax请求向后台请求数据之后局部刷新页面。&lt;/li&gt;
+&lt;li&gt;当我们访问其它页面时，也是同样的原理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这两种方式的优缺点网上有很多，我就不再啰嗦了。&lt;/p&gt;
+&lt;h2 id=&#34;404问题&#34;&gt;404问题&lt;/h2&gt;
+&lt;p&gt;前后端分离的单页应用，我们使用history方式，开开心心地build完代码扔给后台部署之后一切正常。但测试人员反应，一旦刷新，就会报404的错误。
+比如，我们在页面“http://localhost:8000/users/list”F5刷新时，就报了404错误。但我们本地开发一切正常啊？&lt;/p&gt;
+&lt;p&gt;这是怎么会事呢？&lt;/p&gt;
+&lt;p&gt;因为使用history模式的路由中，路由是虚拟的，后台并不存在相应的物理路径和文件。
 比如，当刷新页面时，浏览器会向服务器请求/users/list，服务器实际会去找根目录下/users/list.html这个文件，发现找不到，
 因为实际上我们的服务器并没有这样的物理路径/文件，所有内容都是通过Restful风格的接口返回数据通过前端自己渲染的，自然会报404错误。
-而开发时，内置的服务器已经帮我们做了处理，我们当然发现不了。&lt;/p>
-&lt;p>要解决这个问题也很简单，只要将所有请求到统一转发到首页，利用首页加载的js解析地址栏路由动态请求数据刷新页面完成显示。&lt;/p>
-&lt;p>比如nginx这样配置：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre class="chroma">&lt;code class="language-xml" data-lang="xml">try_files $url /index.html
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>前端简史</title><link>https://hankaibo.github.io/post/2019/2019-03-06/</link><pubDate>Wed, 06 Mar 2019 13:57:46 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-03-06/</guid><description>&lt;h2 id="html">HTML&lt;/h2>
-&lt;ul>
-&lt;li>1993.06，HTML诞生&lt;/li>
-&lt;li>1995.11，HTML 2.0&lt;/li>
-&lt;li>1996.01，HTML 3.2&lt;/li>
-&lt;li>1997.11，HTML 4.0&lt;/li>
-&lt;li>2014.10，HTML 5.0&lt;/li>
-&lt;li>2017.10，HTML 5.1&lt;/li>
-&lt;li>2017.12，HTML 5.2&lt;/li>
-&lt;/ul>
-&lt;h2 id="css">CSS&lt;/h2>
-&lt;ul>
-&lt;li>1996.12, CSS 1.0&lt;/li>
-&lt;li>1998.05, CSS 2.0&lt;/li>
-&lt;li>2001.05, CSS 3.0&lt;/li>
-&lt;/ul>
-&lt;h2 id="javascript">JavaScript&lt;/h2>
-&lt;ul>
-&lt;li>1995, LiveScript ==&amp;gt; JavaScript&lt;/li>
-&lt;li>1996, JScript&lt;/li>
-&lt;li>1997, ECMAScript&lt;/li>
-&lt;li>1990s, ECMAScript 1.0 &amp;ndash;&amp;gt; 2.0 &amp;ndash;&amp;gt; 3.0&lt;/li>
-&lt;li>2007s, ECMAScript 4.0 &amp;ndash;&amp;gt; 3.1&lt;/li>
-&lt;li>2009s, ECMAScript 5.0 &amp;ndash;&amp;gt; 5.1&lt;/li>
-&lt;li>2015, ECMAScript 6.0 ==&amp;gt; ECMAScript 2015&lt;/li>
-&lt;/ul>
-&lt;h2 id="web-10时代静态页面">Web 1.0时代，静态页面&lt;/h2>
-&lt;ul>
-&lt;li>1990, WWW诞生&lt;/li>
-&lt;li>1992, Mosaic&lt;/li>
-&lt;li>1994, Navigator 1.0&lt;/li>
-&lt;li>1996, Navigator 2.0&lt;/li>
-&lt;/ul>
-&lt;h2 id="web-20时代动态页面">Web 2.0时代，动态页面&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>Ajax&lt;/p>
-&lt;ul>
-&lt;li>2004, Google Email&lt;/li>
-&lt;li>2005, Google Map&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>兼容性&lt;/p>
-&lt;ul>
-&lt;li>Dojo&lt;/li>
-&lt;li>jQuery&lt;/li>
-&lt;li>MooTools&lt;/li>
-&lt;li>Prototype&lt;/li>
-&lt;li>YUI/Ext&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>模块化&lt;/p>
-&lt;ul>
-&lt;li>CommonJS&lt;/li>
-&lt;li>AMD&lt;/li>
-&lt;li>CMD&lt;/li>
-&lt;li>UMD&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>模板&lt;/p>
-&lt;ul>
-&lt;li>aiduTemplate&lt;/li>
-&lt;li>artTemplate&lt;/li>
-&lt;li>juicer&lt;/li>
-&lt;li>&amp;hellip;&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>MVVM&lt;/p>
-&lt;ul>
-&lt;li>Knockout&lt;/li>
-&lt;li>Backbone&lt;/li>
-&lt;li>Angular&lt;/li>
-&lt;li>React&lt;/li>
-&lt;li>Vue&lt;/li>
-&lt;li>&amp;hellip;&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="nodejs-诞生大前端时代">Node.js 诞生，大前端时代&lt;/h2>
-&lt;ul>
-&lt;li>bower&lt;/li>
-&lt;li>npm&lt;/li>
-&lt;li>jspm&lt;/li>
-&lt;li>spm&lt;/li>
-&lt;li>grunt&lt;/li>
-&lt;li>gulp&lt;/li>
-&lt;li>webpack&lt;/li>
-&lt;li>rollup&lt;/li>
-&lt;li>&amp;hellip;&lt;/li>
-&lt;/ul></description></item><item><title>Hello</title><link>https://hankaibo.github.io/post/hello/</link><pubDate>Thu, 31 Jan 2019 11:45:23 +0800</pubDate><guid>https://hankaibo.github.io/post/hello/</guid><description>&lt;p>Hi, hugo!&lt;/p></description></item><item><title>关于我</title><link>https://hankaibo.github.io/about/</link><pubDate>Wed, 30 Jan 2019 16:32:08 +0800</pubDate><guid>https://hankaibo.github.io/about/</guid><description>&lt;p>我是一条狗。&lt;/p></description></item></channel></rss>
+而开发时，内置的服务器已经帮我们做了处理，我们当然发现不了。&lt;/p&gt;
+&lt;p&gt;要解决这个问题也很简单，只要将所有请求到统一转发到首页，利用首页加载的js解析地址栏路由动态请求数据刷新页面完成显示。&lt;/p&gt;
+&lt;p&gt;比如nginx这样配置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;try_files $url /index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>前端简史</title>
+      <link>https://hankaibo.github.io/post/2019/2019-03-06/</link>
+      <pubDate>Wed, 06 Mar 2019 13:57:46 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-03-06/</guid>
+      
+        <description>&lt;h2 id=&#34;html&#34;&gt;HTML&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1993.06，HTML诞生&lt;/li&gt;
+&lt;li&gt;1995.11，HTML 2.0&lt;/li&gt;
+&lt;li&gt;1996.01，HTML 3.2&lt;/li&gt;
+&lt;li&gt;1997.11，HTML 4.0&lt;/li&gt;
+&lt;li&gt;2014.10，HTML 5.0&lt;/li&gt;
+&lt;li&gt;2017.10，HTML 5.1&lt;/li&gt;
+&lt;li&gt;2017.12，HTML 5.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;css&#34;&gt;CSS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1996.12, CSS 1.0&lt;/li&gt;
+&lt;li&gt;1998.05, CSS 2.0&lt;/li&gt;
+&lt;li&gt;2001.05, CSS 3.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;javascript&#34;&gt;JavaScript&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1995, LiveScript ==&amp;gt; JavaScript&lt;/li&gt;
+&lt;li&gt;1996, JScript&lt;/li&gt;
+&lt;li&gt;1997, ECMAScript&lt;/li&gt;
+&lt;li&gt;1990s, ECMAScript 1.0 &amp;ndash;&amp;gt; 2.0 &amp;ndash;&amp;gt; 3.0&lt;/li&gt;
+&lt;li&gt;2007s, ECMAScript 4.0 &amp;ndash;&amp;gt; 3.1&lt;/li&gt;
+&lt;li&gt;2009s, ECMAScript 5.0 &amp;ndash;&amp;gt; 5.1&lt;/li&gt;
+&lt;li&gt;2015, ECMAScript 6.0 ==&amp;gt; ECMAScript 2015&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;web-10时代静态页面&#34;&gt;Web 1.0时代，静态页面&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1990, WWW诞生&lt;/li&gt;
+&lt;li&gt;1992, Mosaic&lt;/li&gt;
+&lt;li&gt;1994, Navigator 1.0&lt;/li&gt;
+&lt;li&gt;1996, Navigator 2.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;web-20时代动态页面&#34;&gt;Web 2.0时代，动态页面&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ajax&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2004, Google Email&lt;/li&gt;
+&lt;li&gt;2005, Google Map&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;兼容性&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dojo&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;li&gt;MooTools&lt;/li&gt;
+&lt;li&gt;Prototype&lt;/li&gt;
+&lt;li&gt;YUI/Ext&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;模块化&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CommonJS&lt;/li&gt;
+&lt;li&gt;AMD&lt;/li&gt;
+&lt;li&gt;CMD&lt;/li&gt;
+&lt;li&gt;UMD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;模板&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;aiduTemplate&lt;/li&gt;
+&lt;li&gt;artTemplate&lt;/li&gt;
+&lt;li&gt;juicer&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MVVM&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Knockout&lt;/li&gt;
+&lt;li&gt;Backbone&lt;/li&gt;
+&lt;li&gt;Angular&lt;/li&gt;
+&lt;li&gt;React&lt;/li&gt;
+&lt;li&gt;Vue&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;nodejs-诞生大前端时代&#34;&gt;Node.js 诞生，大前端时代&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;bower&lt;/li&gt;
+&lt;li&gt;npm&lt;/li&gt;
+&lt;li&gt;jspm&lt;/li&gt;
+&lt;li&gt;spm&lt;/li&gt;
+&lt;li&gt;grunt&lt;/li&gt;
+&lt;li&gt;gulp&lt;/li&gt;
+&lt;li&gt;webpack&lt;/li&gt;
+&lt;li&gt;rollup&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>https://hankaibo.github.io/post/hello/</link>
+      <pubDate>Thu, 31 Jan 2019 11:45:23 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/hello/</guid>
+      
+        <description>&lt;p&gt;Hi, hugo!&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://hankaibo.github.io/about/</link>
+      <pubDate>Wed, 30 Jan 2019 16:32:08 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/about/</guid>
+      
+        <description>&lt;p&gt;我是一条狗。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

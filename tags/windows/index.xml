@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on 韩凯波的个人博客</title><link>https://hankaibo.github.io/tags/windows/</link><description>Recent content in Windows on 韩凯波的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 07 Aug 2019 20:52:35 +0800</lastBuildDate><atom:link href="https://hankaibo.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows 10家庭版启用远程桌面连接</title><link>https://hankaibo.github.io/post/2019/2019-08-07/</link><pubDate>Wed, 07 Aug 2019 20:52:35 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-08-07/</guid><description>一直没怎么用过Windows自带的远程桌面功能，最近经常需要在家远程连接公司电脑办公，但以前使用正常的TeamViewer突然抽风不能用了。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on 韩凯波的个人博客</title>
+    <link>https://hankaibo.github.io/tags/windows/</link>
+    <description>Recent content in Windows on 韩凯波的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 07 Aug 2019 20:52:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://hankaibo.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows 10家庭版启用远程桌面连接</title>
+      <link>https://hankaibo.github.io/post/2019/2019-08-07/</link>
+      <pubDate>Wed, 07 Aug 2019 20:52:35 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-08-07/</guid>
+      <description>一直没怎么用过Windows自带的远程桌面功能，最近经常需要在家远程连接公司电脑办公，但以前使用正常的TeamViewer突然抽风不能用了。</description>
+    </item>
+    
+  </channel>
+</rss>

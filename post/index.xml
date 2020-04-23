@@ -1,1 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 韩凯波的个人博客</title><link>https://hankaibo.github.io/post/</link><description>Recent content in Posts on 韩凯波的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 24 Apr 2020 00:07:26 +0800</lastBuildDate><atom:link href="https://hankaibo.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2002 04 24</title><link>https://hankaibo.github.io/post/2020/2002-04-24/</link><pubDate>Fri, 24 Apr 2020 00:07:26 +0800</pubDate><guid>https://hankaibo.github.io/post/2020/2002-04-24/</guid><description>test github actions</description></item><item><title>React 脚手架/模板选型</title><link>https://hankaibo.github.io/post/2020/2020-04-12/</link><pubDate>Sun, 12 Apr 2020 16:15:15 +0800</pubDate><guid>https://hankaibo.github.io/post/2020/2020-04-12/</guid><description>React 脚手架选择 刚进公司时，我们前端组新建，两个人。领导让我们自定框架，同事一直在用 React ，我们就从 github 上选择了 antdpro 作为我们的前端基础脚手架。 选择它的原</description></item><item><title>Maven 配置 https 仓库</title><link>https://hankaibo.github.io/post/2019/2019-10-14/</link><pubDate>Mon, 14 Oct 2019 14:20:53 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-10-14/</guid><description>一直使用阿里的maven镜像，快。 上周才发现阿里更新了镜像的配置地址，兴冲冲地照原样抄袭了下来。 更新完之后才发现无法编译打包了，pom.xm</description></item><item><title>TeamViewer替代方案之OpenVPN</title><link>https://hankaibo.github.io/post/2019/2019-10-08/</link><pubDate>Tue, 08 Oct 2019 19:29:32 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-10-08/</guid><description>时隔多日，正好公司同事需要使用OpenVPN，我有点时间就研究安装试了试。 从网上搜索了下，文章一大堆，方式主要有三种，简单说明一下。 第一种，</description></item><item><title>TeamViewer替代方案之frp</title><link>https://hankaibo.github.io/post/2019/2019-08-12/</link><pubDate>Mon, 12 Aug 2019 17:16:11 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-08-12/</guid><description>原因前文已述，不再多言。 frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资料，</description></item><item><title>Windows 10家庭版启用远程桌面连接</title><link>https://hankaibo.github.io/post/2019/2019-08-07/</link><pubDate>Wed, 07 Aug 2019 20:52:35 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-08-07/</guid><description>一直没怎么用过Windows自带的远程桌面功能，最近经常需要在家远程连接公司电脑办公，但以前使用正常的TeamViewer突然抽风不能用了。</description></item><item><title>前端路由</title><link>https://hankaibo.github.io/post/2019/2019-04-08/</link><pubDate>Mon, 08 Apr 2019 16:02:31 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-04-08/</guid><description>背景 说起前端路由，就不得再问一句有后台路由吗？ 其实一开始是没有前端路由这个概念的，路由全部由后台服务器实现与控制。 当我们在浏览器地址栏中输入</description></item><item><title>前端简史</title><link>https://hankaibo.github.io/post/2019/2019-03-06/</link><pubDate>Wed, 06 Mar 2019 13:57:46 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-03-06/</guid><description>HTML 1993.06，HTML诞生 1995.11，HTML 2.0 1996.01，HTML 3.2 1997.11，HTML 4.0 2014.10，HTML 5.0 201</description></item><item><title>Hello</title><link>https://hankaibo.github.io/post/hello/</link><pubDate>Thu, 31 Jan 2019 11:45:23 +0800</pubDate><guid>https://hankaibo.github.io/post/hello/</guid><description>Hi, hugo!</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 韩凯波的个人博客</title>
+    <link>https://hankaibo.github.io/post/</link>
+    <description>Recent content in Posts on 韩凯波的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 24 Apr 2020 00:07:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://hankaibo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2002 04 24</title>
+      <link>https://hankaibo.github.io/post/2020/2002-04-24/</link>
+      <pubDate>Fri, 24 Apr 2020 00:07:26 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2020/2002-04-24/</guid>
+      <description>test github actions</description>
+    </item>
+    
+    <item>
+      <title>React 脚手架/模板选型</title>
+      <link>https://hankaibo.github.io/post/2020/2020-04-12/</link>
+      <pubDate>Sun, 12 Apr 2020 16:15:15 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2020/2020-04-12/</guid>
+      <description>React 脚手架选择 刚进公司时，我们前端组新建，两个人。领导让我们自定框架，同事一直在用 React ，我们就从 github 上选择了 antdpro 作为我们的前端基础脚手架。 选择它的原</description>
+    </item>
+    
+    <item>
+      <title>Maven 配置 https 仓库</title>
+      <link>https://hankaibo.github.io/post/2019/2019-10-14/</link>
+      <pubDate>Mon, 14 Oct 2019 14:20:53 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-10-14/</guid>
+      <description>一直使用阿里的maven镜像，快。 上周才发现阿里更新了镜像的配置地址，兴冲冲地照原样抄袭了下来。 更新完之后才发现无法编译打包了，pom.xm</description>
+    </item>
+    
+    <item>
+      <title>TeamViewer替代方案之OpenVPN</title>
+      <link>https://hankaibo.github.io/post/2019/2019-10-08/</link>
+      <pubDate>Tue, 08 Oct 2019 19:29:32 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-10-08/</guid>
+      <description>时隔多日，正好公司同事需要使用OpenVPN，我有点时间就研究安装试了试。 从网上搜索了下，文章一大堆，方式主要有三种，简单说明一下。 第一种，</description>
+    </item>
+    
+    <item>
+      <title>TeamViewer替代方案之frp</title>
+      <link>https://hankaibo.github.io/post/2019/2019-08-12/</link>
+      <pubDate>Mon, 12 Aug 2019 17:16:11 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-08-12/</guid>
+      <description>原因前文已述，不再多言。 frp 是一个反向代理应用。这里简单说一下啥是代理，代理可分为正向与反向两种。 正向代理，比如你想通过Google查点资料，</description>
+    </item>
+    
+    <item>
+      <title>Windows 10家庭版启用远程桌面连接</title>
+      <link>https://hankaibo.github.io/post/2019/2019-08-07/</link>
+      <pubDate>Wed, 07 Aug 2019 20:52:35 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-08-07/</guid>
+      <description>一直没怎么用过Windows自带的远程桌面功能，最近经常需要在家远程连接公司电脑办公，但以前使用正常的TeamViewer突然抽风不能用了。</description>
+    </item>
+    
+    <item>
+      <title>前端路由</title>
+      <link>https://hankaibo.github.io/post/2019/2019-04-08/</link>
+      <pubDate>Mon, 08 Apr 2019 16:02:31 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-04-08/</guid>
+      <description>背景 说起前端路由，就不得再问一句有后台路由吗？ 其实一开始是没有前端路由这个概念的，路由全部由后台服务器实现与控制。 当我们在浏览器地址栏中输入</description>
+    </item>
+    
+    <item>
+      <title>前端简史</title>
+      <link>https://hankaibo.github.io/post/2019/2019-03-06/</link>
+      <pubDate>Wed, 06 Mar 2019 13:57:46 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/2019/2019-03-06/</guid>
+      <description>HTML 1993.06，HTML诞生 1995.11，HTML 2.0 1996.01，HTML 3.2 1997.11，HTML 4.0 2014.10，HTML 5.0 201</description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>https://hankaibo.github.io/post/hello/</link>
+      <pubDate>Thu, 31 Jan 2019 11:45:23 +0800</pubDate>
+      
+      <guid>https://hankaibo.github.io/post/hello/</guid>
+      <description>Hi, hugo!</description>
+    </item>
+    
+  </channel>
+</rss>
