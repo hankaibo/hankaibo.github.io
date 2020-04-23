@@ -9,17 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           submodules: true
+          fetch-depth: 0
 
-      - name: Hugo setup
+      - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.4.10
         with:
-          # The Hugo version to download (if necessary) and use. Example: 0.58.2
           hugo-version: 0.69.0
-          # Download (if necessary) and use Hugo extended version. Example: true
           extended: true
 
       - name: Build
@@ -28,5 +27,6 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ThinkPad }}
+          deploy_token: ${{ secrets.ThinkPadSSD }}
           publish_dir: ./public
+          publish_branch: master
