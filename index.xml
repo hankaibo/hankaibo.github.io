@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>韩凯波的个人博客</title><link>https://hankaibo.github.io/</link><description>Recent content on 韩凯波的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 30 Jan 2019 16:32:08 +0800</lastBuildDate><atom:link href="https://hankaibo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2002 04 24</title><link>https://hankaibo.github.io/post/2020/2002-04-24/</link><pubDate>Fri, 24 Apr 2020 00:07:26 +0800</pubDate><guid>https://hankaibo.github.io/post/2020/2002-04-24/</guid><description>&lt;p>test github actions&lt;/p></description></item><item><title>React 脚手架/模板选型</title><link>https://hankaibo.github.io/post/2020/2020-04-12/</link><pubDate>Sun, 12 Apr 2020 16:15:15 +0800</pubDate><guid>https://hankaibo.github.io/post/2020/2020-04-12/</guid><description>&lt;h2 id="react-脚手架选择">React 脚手架选择&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>韩凯波的个人博客</title><link>https://hankaibo.github.io/</link><description>Recent content on 韩凯波的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 30 Jan 2019 16:32:08 +0800</lastBuildDate><atom:link href="https://hankaibo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>React 脚手架/模板选型</title><link>https://hankaibo.github.io/post/2020/2020-04-12/</link><pubDate>Sun, 12 Apr 2020 16:15:15 +0800</pubDate><guid>https://hankaibo.github.io/post/2020/2020-04-12/</guid><description>&lt;h2 id="react-脚手架选择">React 脚手架选择&lt;/h2>
 &lt;p>刚进公司时，我们前端组新建，两个人。领导让我们自定框架，同事一直在用 React ，我们就从 github 上选择了 &lt;a href="https://github.com/ant-design/ant-design-pro">antdpro&lt;/a> 作为我们的前端基础脚手架。
 选择它的原因一是阿里出品，阿里作为中国前端界的少林泰斗，技术水平顶尖，而且该框架也在其内部使用良久，经得住各种考验；二是中文文档齐全，
 对于我这种英文渣渣来说，母语太亲切了。&lt;/p>
@@ -721,7 +721,125 @@ frpc -c frpc.ini
 &lt;p>运行 RDPCheck.exe，连接电脑测试。&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>&lt;strong>注：如果一切正常的情况下依然不能连接可以尝试设置用户名/密码，无密码可能会出问题。&lt;/strong>&lt;/p></description></item><item><title>前端路由</title><link>https://hankaibo.github.io/post/2019/2019-04-08/</link><pubDate>Mon, 08 Apr 2019 16:02:31 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-04-08/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>&lt;strong>注：如果一切正常的情况下依然不能连接可以尝试设置用户名/密码，无密码可能会出问题。&lt;/strong>&lt;/p></description></item><item><title>GitLab CI/CD</title><link>https://hankaibo.github.io/post/2019/2019-08-02/</link><pubDate>Fri, 02 Aug 2019 14:26:55 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-08-02/</guid><description>&lt;p>很早就想使用CI(持续集成)，CD(持续部署)，怎奈水平低于海平面，一直不得其门而入。&lt;/p>
+&lt;p>最近这棵心又燥动了，又试了几次，竟然成了。特写在此处，帮助有缘人。&lt;/p>
+&lt;p>我的环境如下：&lt;/p>
+&lt;ul>
+&lt;li>GitLab server，代码仓库服务器，CentOS系统，下文简称gitlab&lt;/li>
+&lt;li>gitlab runner，本机，Windows系统，简称runner&lt;/li>
+&lt;li>server，部署服务器，Ubuntu系统，下文简称server&lt;/li>
+&lt;/ul>
+&lt;p>从网上查到文章都提到，GitLab 8以后集成了CI/CD，所以只要保证使用的版本是符合要求的就可以了。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>安装 GitLab server，请参考官网教程。&lt;a href="https://about.gitlab.com/install/">https://about.gitlab.com/install/&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>官方推荐4G+内存，看了下我的 server 服务器，2G内存，打扰了。&lt;/strong>&lt;/p>
+&lt;p>由于公司仓库就是 GitLab 构建的，所以直接使用它了。&lt;/p>
+&lt;p>现在官方网站上有针对主流平台的一键脚本安装方法，三大云厂商安装方法，源码，容器等等各种方法，总有一款适合你。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>新建测试仓库，复制 CI/CD配置。&lt;/p>
+&lt;blockquote>
+&lt;p>新建仓库，略。&lt;/p>
+&lt;p>进入仓库，选择【设置】&amp;ndash;【CI/CD】菜单项，展开 ”Runner&amp;rdquo; ，记住 &amp;ldquo;手动设置specificRunner&amp;rdquo; 卡中的令牌与 URL 地址。后面会用。&lt;/p>
+&lt;p>&lt;img src="https://hankaibo.github.io/img/gitlab-cicd.png" alt="specificRunner" title="specificRunner">&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>安装 GitLab runner，请参考官网教程。&lt;a href="https://docs.gitlab.com/runner/install/">https://docs.gitlab.com/runner/install/&lt;/a>。&lt;/p>
+&lt;blockquote>
+&lt;p>根据我们的情况，选择要安装的包，这里我们选择二进制 Windows 版本。&lt;/p>
+&lt;ol>
+&lt;li>创建一个目录，准备放置安装文件。例如 E:\gitlab-runner 。&lt;/li>
+&lt;li>下载相应版本的安装文件，&lt;a href="https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-windows-386.exe">x86&lt;/a> or &lt;a href="https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-windows-amd64.exe">amd64&lt;/a> (因为在亚马逊云上，可能需要科学上网，你懂的。)。将下载的二进制运行文件重命名为 gitlab-runner.exe 放到 gitlab-runner 目录中.&lt;/li>
+&lt;li>打开管理员命令窗口 （&lt;strong>是管理员命令窗口，CMD、PowerShell 都可以。&lt;/strong>) 。&lt;/li>
+&lt;li>注册 runner 。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># 运行注册命令(需要 cd 到gitlab-runner.exe 所在目录)&lt;/span>
+./gitlab-runner.exe register
+&lt;span class="c1"># 填写gitlab仓库地址(就是我们第1步中安装的服务器所在机器的id地址，可以从第2步的截图中获取)&lt;/span>
+Please enter the gitlab-ci coordinator URL &lt;span class="o">(&lt;/span>e.g. https://gitlab.com &lt;span class="o">)&lt;/span>
+步骤2截图中的 URL 地址
+&lt;span class="c1"># 填写仓库的访问令牌&lt;/span>
+Please enter the gitlab-ci token &lt;span class="k">for&lt;/span> this runner
+步骤2截图中的令牌&lt;span class="o">(&lt;/span>这个令牌相当重要，请不要泄露，我上图因为演示之后会重置，就懒得马赛克了。&lt;span class="o">)&lt;/span>
+&lt;span class="c1"># 填写 runner 描述&lt;/span>
+Please enter the gitlab-ci description &lt;span class="k">for&lt;/span> this runner
+&lt;span class="o">[&lt;/span>hostname&lt;span class="o">]&lt;/span> my-runner
+&lt;span class="c1"># 填写 runner 标签(.gitlab-ci.yml 配置中使用)&lt;/span>
+Please enter the gitlab-ci tags &lt;span class="k">for&lt;/span> this runner &lt;span class="o">(&lt;/span>comma separated&lt;span class="o">)&lt;/span>:
+my-tag,another-tag
+&lt;span class="c1"># 选择 runner 执行器，它提供了选择，我们选择即可。为了简单起见，我们选择shell。&lt;/span>
+Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, shell:
+shell
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="5">
+&lt;li>注册成 Windows 服务。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="nb">cd&lt;/span> E:&lt;span class="se">\g&lt;/span>itlab-runner
+.&lt;span class="se">\g&lt;/span>itlab-runner.exe install
+.&lt;span class="se">\g&lt;/span>itlab-runner.exe start
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这样就能在 Windows 服务中查看我们注册的服务了。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>配置 .gitlab-ci.yml&lt;/p>
+&lt;blockquote>
+&lt;p>这里的难点与重点是如何远程登录自己的部署服务器。我一开始完全没有思路，后来Google之后发现如此简单。&lt;/p>
+&lt;p>远程登录服务器有两种方式：用户名/密码登录、SSH免密登录。 用户名/密码登录有交互，自动部署无法实现；而 SSH 不但免密无交互而且安全。&lt;/p>
+&lt;p>SSH 登录和平时我们使用一样，先用命令 ssh-key 生成一对公钥和私钥；然后把公钥添加到服务器；最后执行 SSH 登录。&lt;/p>
+&lt;p>这里有两种情况，我简单啰嗦两句。&lt;/p>
+&lt;p>&lt;em>1. 使用 shell&lt;/em>&lt;/p>
+&lt;p>Windows 机器生成一对密钥，然后把公钥配置到 Ubuntu server 服务器，Windows shell 运行 scp 复制生成的代码到 Ubuntu server 服务器。&lt;/p>
+&lt;p>因为 shell 是 Windows 机器自带的命令，我们无需其它配置，ssh 登录时默认携带了 Windows 机器的私钥。&lt;/p>
+&lt;p>&lt;em>2. 使用 Docker&lt;/em>&lt;/p>
+&lt;p>Docker 是一种容器技术，在这里类似于生成了一个虚拟机器，与我们的 Windows 宿主机是相互独立的。所以我们 Windows 生成的私钥是无法被它直接使用的。&lt;/p>
+&lt;p>我们在 Docker 中复制文件到远程 Ubuntu server 服务器时，Docker 的.ssh目录下是没有私钥的，私钥在 Windows 宿主机的 .ssh 目录里。复制失败。&lt;/p>
+&lt;p>解决办法就是配置变量，在 Gitlab 仓库的设置中，添加变量，这些变量可以被 Runner 使用。&lt;/p>
+&lt;p>我们只要在 【设置&amp;ndash;CI/CD】中配置一个变量 foo，它的值是私钥的内容，然后在 .gitlab-ci.yml 通过使用变量 foo 即可。&lt;/p>
+&lt;p>理顺了思路，配置写起来就简单了，具体可以参考网上或者官网。&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ol>
+&lt;p>到此， gitlab 的 CI/CD 就结束了，如果有问题，欢迎沟通交流。&lt;/p></description></item><item><title>前端路由</title><link>https://hankaibo.github.io/post/2019/2019-04-08/</link><pubDate>Mon, 08 Apr 2019 16:02:31 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-04-08/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
 &lt;p>说起前端路由，就不得再问一句有后台路由吗？
 其实一开始是没有前端路由这个概念的，路由全部由后台服务器实现与控制。
 当我们在浏览器地址栏中输入一个URL时，浏览器将其发送到后台服务器，服务器解析出地址并根据相关配置拼接成html返回给浏览器渲染。&lt;/p>
