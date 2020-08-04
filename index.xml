@@ -361,17 +361,18 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>&lt;strong>create-react-app&lt;/strong>，facebook 官方出品，极简到极致，啥都没有了。没有路由、没有状态管理，没有配置文件，纯 React ，真是一点不能再干净了。适合学习，如果有很强的webpack配置能力，可在其基础上自建；&lt;/p>
-&lt;p>&lt;strong>react-boilerplate&lt;/strong>，集成了路由、状态管理(redux-saga)、国际化等功能，全套服务，可用于生产环境；&lt;/p>
-&lt;p>&lt;strong>react-slingshot&lt;/strong>，集成了路由、状态管理，但状态管理使用 redux-thunk，据说没有 redux-saga 好用；&lt;/p>
-&lt;p>&lt;strong>react-pxq&lt;/strong>，基本上就是 create-react-app + 作者的自定义，集成了路由、状态管理(redux-thunk)等常用功能；&lt;/p>
-&lt;p>&lt;strong>react-admin&lt;/strong>，create-react-app的ts版本 + 作者的自定义，集成了路由、状态管理(redux-thunk)等，自定义页面较多；&lt;/p>
-&lt;p>&lt;strong>react&lt;/strong>，作者手工打造，集成路由、状态管理(redux-thunk)等；&lt;/p>
-&lt;p>&lt;strong>airframe-react&lt;/strong>，使用了一套bootstrap的ui，没有状态管理，类似于bootstrap的仪表盘管理演示，个人不喜欢；&lt;/p>
-&lt;p>&lt;strong>arc&lt;/strong>，感觉就是一个create-react-app的示例加强版本，封装没有create-react-app 好，更新也比不了，选它不如直接选择 create-react-app；&lt;/p>
-&lt;p>&lt;strong>react-webpack-babel&lt;/strong>，这真是一个入门配置，没有状态管理，不如create-react-app；&lt;/p>
-&lt;p>&lt;strong>dva-boot-admin&lt;/strong>，从名字上可以看出来，状态管理是dva（封装了redux-saga），作者又在上封装了一层（估计类似于umi了)，整体给我感觉就是create-react-app + dva(umi)，感觉可以快等于antdpro了。&lt;/p>
-&lt;p>综合来看，大部分脚手架都借鉴 create-react-app ，在其上做了自定义，但状态管理又没有使用redux-saga的强大。如果让我选择，我会直接选择react-boilerplate这款。虽然它更新还停留在去年4月份，但 dev 分支一直在保持更新。&lt;/p></description></item><item><title>Maven 配置 https 仓库</title><link>https://hankaibo.github.io/post/2019/2019-10-14/</link><pubDate>Mon, 14 Oct 2019 14:20:53 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-10-14/</guid><description>&lt;p>一直使用阿里的maven镜像，快。&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/facebook/create-react-app">create-react-app&lt;/a>&lt;/strong>，facebook 官方出品，极简到极致，啥都没有了。没有路由、没有状态管理，没有配置文件，纯 React ，真是一点不能再干净了。适合学习，如果有很强的webpack配置能力，可在其基础上自定义；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/react-boilerplate/react-boilerplate">react-boilerplate&lt;/a>&lt;/strong>，集成了路由、状态管理(redux-saga)、国际化等功能，全套服务，可用于生产环境；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/coryhouse/react-slingshot">react-slingshot&lt;/a>&lt;/strong>，集成了路由、状态管理，但状态管理使用 redux-thunk，据说没有 redux-saga 好用；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/bailicangdu/react-pxq">react-pxq&lt;/a>&lt;/strong>，基本上就是 create-react-app + 作者的自定义，集成了路由、状态管理(redux-thunk)等常用功能；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/yezihaohao/react-admin">react-admin&lt;/a>&lt;/strong>，create-react-app的ts版本 + 作者的自定义，集成了路由、状态管理(redux-thunk)等，自定义页面较多；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/duxianwei520/react">react&lt;/a>&lt;/strong>，作者手工打造，集成路由、状态管理(redux-thunk)等；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/duxianwei520/react">airframe-react&lt;/a>&lt;/strong>，使用了一套bootstrap的ui，没有状态管理，类似于bootstrap的仪表盘管理演示，不适合我；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/duxianwei520/react">arc&lt;/a>&lt;/strong>，感觉就是一个create-react-app的示例加强版本，封装没有create-react-app好，更新也比不了，选它不如直接选择 create-react-app；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/yezihaohao/react-admin">react-webpack-babel&lt;/a>&lt;/strong>，这真是一个入门配置，没有状态管理，不如create-react-app；&lt;/p>
+&lt;p>&lt;strong>&lt;a href="https://github.com/LANIF-UI/dva-boot-admin">dva-boot-admin&lt;/a>&lt;/strong>，从名字上可以看出来，状态管理是dva（封装了redux-saga），作者又在上封装了一层（估计类似于umi了)，整体给我感觉就是create-react-app + dva(umi)，感觉可以快等于antdpro了。&lt;/p>
+&lt;p>综合来看，大部分脚手架都借鉴 create-react-app ，在其上做了自定义，但状态管理又没有使用redux-saga的强大。如果让我选择，我会直接选择react-boilerplate这款。虽然它更新还停留在去年4月份，但 dev 分支一直在保持更新。&lt;/p>
+&lt;p>以上为一家之言，欢迎交流。&lt;/p></description></item><item><title>Maven 配置 https 仓库</title><link>https://hankaibo.github.io/post/2019/2019-10-14/</link><pubDate>Mon, 14 Oct 2019 14:20:53 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-10-14/</guid><description>&lt;p>一直使用阿里的maven镜像，快。&lt;/p>
 &lt;p>上周才发现阿里更新了镜像的配置地址，兴冲冲地照原样抄袭了下来。&lt;/p>
 &lt;p>更新完之后才发现无法编译打包了，pom.xml 文件也提示有错误。报错信息类似这样：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -751,7 +752,7 @@ frpc -c frpc.ini
 &lt;/li>
 &lt;/ol>
 &lt;p>&lt;strong>注：如果一切正常的情况下依然不能连接可以尝试设置用户名/密码，无密码可能会出问题。&lt;/strong>&lt;/p></description></item><item><title>GitLab CI/CD</title><link>https://hankaibo.github.io/post/2019/2019-08-02/</link><pubDate>Fri, 02 Aug 2019 14:26:55 +0800</pubDate><guid>https://hankaibo.github.io/post/2019/2019-08-02/</guid><description>&lt;p>很早就想使用CI(持续集成)，CD(持续部署)，怎奈水平低于海平面，一直不得其门而入。&lt;/p>
-&lt;p>最近这棵心又燥动了，又试了几次，竟然成了。特写在此处，帮助有缘人。&lt;/p>
+&lt;p>最近这颗心又燥动了，又试了几次，竟然成了。特写在此处，帮助有缘人。&lt;/p>
 &lt;p>我的环境如下：&lt;/p>
 &lt;ul>
 &lt;li>GitLab server，代码仓库服务器，CentOS系统，下文简称gitlab&lt;/li>
